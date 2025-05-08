@@ -1,12 +1,98 @@
-# React + Vite
+# 🌐 Portfolio de Manuel Ríos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido! Este es mi portfolio personal como **Desarrollador Web**, donde presento mis proyectos, habilidades y experiencia en el desarrollo frontend con tecnologías modernas como **React**, **TailwindCSS**, y más.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías principales
 
-## Expanding the ESLint configuration
+- ⚛️ React
+- 💨 TailwindCSS
+- 💡 JavaScript (ES6+)
+- 🌐 HTML5 & CSS3
+- 🎨 Animaciones con Framer Motion
+- 📦 Vite
+- 📧 EmailJS para formularios de contacto
+- 🧭 React Router DOM
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Funcionalidades destacadas
+
+- Preloader animado al iniciar
+- Hero con animaciones suaves y diseño responsive
+- Secciones informativas: Sobre mí, Proyectos, Contacto
+- Proyectos individuales con galería de imágenes y descripciones detalladas
+- Formulario de contacto funcional vía EmailJS
+- Modo mobile adaptado con menú hamburguesa
+- SEO optimizado con meta etiquetas, `sitemap.xml`, y `robots.txt`
+
+---
+
+## 📂 Estructura del proyecto
+
+```bash
+📁 public
+├── favicon.ico
+├── og-image.jpg
+├── robots.txt
+├── sitemap.xml
+└── assets/
+📁 src
+├── components/
+├── sections/
+├── pages/
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+## 🧪 Instalación local
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/ManRio/portfoliov3.git
+cd portfoliov3
+```
+
+2. Instala las dependencias:
+
+```bash
+npm install
+```
+
+3. Inicia el entorno de desarrollo:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📦 Despliegue
+
+Este proyecto está desplegado con **[Vercel](https://vercel.com/)**. Puedes ver el resultado en:
+
+🔗 **https://portfolio-manriodevs-projects.vercel.app/**
+
+---
+
+## 📬 Contacto
+
+¿Te interesa colaborar o tienes alguna oferta profesional?
+
+- ✉️ [manureina87@gmail.com](mailto:manureina87@gmail.com)
+- 💼 [LinkedIn](https://www.linkedin.com/in/riosreinamanuel/)
+
+---
+
+## 📄 Licencia
+
+Este proyecto es de uso personal. Si deseas usarlo como base, menciona la autoría o contacta previamente. ✌️
+
+---
+
+> Hecho con ❤️ por [Manuel Ríos](https://github.com/ManRio)

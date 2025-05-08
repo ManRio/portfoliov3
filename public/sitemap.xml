@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tu-dominio.vercel.app/</loc>
+    <loc>https://portfoliov3-omega-nine.vercel.app/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.vercel.app/#about</loc>
+    <loc>https://portfoliov3-omega-nine.vercel.app//#about</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.vercel.app/#projects</loc>
+    <loc>https://portfoliov3-omega-nine.vercel.app/#projects</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.vercel.app/#contact</loc>
+    <loc>https://portfoliov3-omega-nine.vercel.app/#contact</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tu-dominio.vercel.app/projects/stockit</loc>
+    <loc>https://portfoliov3-omega-nine.vercel.app/projects/stockit</loc>
   </url>
   <url>
-    <loc>https://tu-dominio.vercel.app/projects/newsreader</loc>
+    <loc>https://portfoliov3-omega-nine.vercel.app/projects/newsreader</loc>
   </url>
   <url>
-    <loc>https://tu-dominio.vercel.app/projects/landingpageresponsive</loc>
+    <loc>https://portfoliov3-omega-nine.vercel.app/projects/landingpageresponsive</loc>
   </url>
 </urlset>
