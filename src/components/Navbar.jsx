@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -12,8 +15,20 @@ function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const closeMenu = () => setMenuOpen(false);
+  const scrollTo = (sectionId) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        document
+          .getElementById(sectionId)
+          ?.scrollIntoView({ behavior: 'smooth' });
+      }, 100); // da tiempo a montar la página
+    } else {
+      document
+        .getElementById(sectionId)
+        ?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <motion.nav
@@ -34,26 +49,35 @@ function Navbar() {
         {/* Navegación escritorio */}
         <ul className='hidden md:flex gap-8 text-white text-sm font-medium'>
           <li>
-            <a href='#about' className='hover:text-cyan-400'>
+            <button
+              onClick={() => scrollTo('about')}
+              className='hover:text-cyan-400'
+            >
               Sobre mí
-            </a>
+            </button>
           </li>
           <li>
-            <a href='#projects' className='hover:text-cyan-400'>
+            <button
+              onClick={() => scrollTo('projects')}
+              className='hover:text-cyan-400'
+            >
               Proyectos
-            </a>
+            </button>
           </li>
           <li>
-            <a href='#contact' className='hover:text-cyan-400'>
+            <button
+              onClick={() => scrollTo('contact')}
+              className='hover:text-cyan-400'
+            >
               Contacto
-            </a>
+            </button>
           </li>
         </ul>
 
         {/* Botón hamburguesa mobile */}
         <div className='md:hidden'>
           <button
-            onClick={toggleMenu}
+            onClick={() => setMenuOpen(!menuOpen)}
             className='text-white text-2xl focus:outline-none'
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
@@ -64,23 +88,33 @@ function Navbar() {
       {/* Menú móvil */}
       {menuOpen && (
         <div className='md:hidden px-6 pb-6 flex flex-col gap-6 text-white text-lg font-medium bg-black/90 backdrop-blur-sm'>
-          <a href='#about' onClick={closeMenu} className='hover:text-cyan-400'>
+          <button
+            onClick={() => {
+              scrollTo('about');
+              setMenuOpen(false);
+            }}
+            className='hover:text-cyan-400'
+          >
             Sobre mí
-          </a>
-          <a
-            href='#projects'
-            onClick={closeMenu}
+          </button>
+          <button
+            onClick={() => {
+              scrollTo('projects');
+              setMenuOpen(false);
+            }}
             className='hover:text-cyan-400'
           >
             Proyectos
-          </a>
-          <a
-            href='#contact'
-            onClick={closeMenu}
+          </button>
+          <button
+            onClick={() => {
+              scrollTo('contact');
+              setMenuOpen(false);
+            }}
             className='hover:text-cyan-400'
           >
             Contacto
-          </a>
+          </button>
         </div>
       )}
     </motion.nav>

@@ -39,6 +39,16 @@ const projects = [
     codeLink: 'https://github.com/ManRio/newsreader',
     external: false,
   },
+  {
+    id: 5,
+    title: 'ORO Manager',
+    description:
+      'Plataforma web desarrollada durante las prácticas FCT para la gestión integral de empleados: recompensas, tareas, formación, chat grupal y más.',
+    image: '/assets/OroManager.png',
+    demoLink: '/projects/ProjectOroManager',
+    codeLink: 'https://github.com/ManRio/OroManager', // opcional o privado
+    external: false,
+  },
 ];
 
 function Projects() {
@@ -58,7 +68,7 @@ function Projects() {
           Proyectos
         </motion.h2>
 
-        <div className='flex flex-col gap-14'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10'>
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -66,38 +76,38 @@ function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true, amount: 0.4 }}
-              className='flex flex-col md:flex-row gap-8 items-center bg-white/10 p-6 md:p-10 rounded-xl shadow-lg'
+              className='flex flex-col items-center bg-white/10 p-4 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-center'
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className='w-full md:w-1/2 rounded-lg object-cover shadow-md max-h-[300px]'
+                className='w-full h-40 object-contain mb-4 rounded-md'
               />
-              <div className='flex flex-col gap-4 md:w-1/2 text-center md:text-left'>
-                <h3 className='text-3xl font-montserrat font-bold'>
-                  {project.title}
-                </h3>
-                <p className='text-gray-300 font-code text-base'>
-                  {project.description}
-                </p>
-                <div className='flex gap-4 justify-center md:justify-start flex-wrap mt-2'>
-                  <a
-                    href={project.demoLink}
-                    target={project.external ? '_blank' : '_self'}
-                    rel='noopener noreferrer'
-                    className='px-5 py-2 bg-cyan-500 hover:bg-cyan-400 text-white rounded-md text-sm font-semibold transition'
-                  >
-                    Ver Demo
-                  </a>
+              <h3 className='text-xl font-montserrat font-bold mb-2'>
+                {project.title}
+              </h3>
+              <p className='text-gray-300 font-code text-sm mb-4'>
+                {project.description}
+              </p>
+              <div className='flex gap-3 justify-center flex-wrap'>
+                <a
+                  href={project.demoLink}
+                  target={project.external ? '_blank' : '_self'}
+                  rel='noopener noreferrer'
+                  className='px-4 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-md text-xs font-semibold transition'
+                >
+                  Ver Demo
+                </a>
+                {project.codeLink && (
                   <a
                     href={project.codeLink}
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='px-5 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-md text-sm font-semibold transition'
+                    className='px-4 py-1.5 bg-gray-700 hover:bg-gray-600 text-white rounded-md text-xs font-semibold transition'
                   >
                     Ver Código
                   </a>
-                </div>
+                )}
               </div>
             </motion.div>
           ))}

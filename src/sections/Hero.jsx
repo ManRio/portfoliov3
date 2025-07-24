@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import HiringBanner from '../components/HiringBanner';
 
 function Hero() {
   return (
@@ -35,6 +36,15 @@ function Hero() {
           Transformando ideas en experiencias digitales con tecnologías
           modernas.
         </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className='mt-8'
+        >
+          <HiringBanner />
+        </motion.div>
       </div>
     </section>
   );

@@ -8,10 +8,12 @@ import Hero from './sections/Hero';
 import About from './sections/About';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
+import Experience from './sections/Experience';
 
 import ProjectLanding from './pages/ProjectLanding';
 import ProjectNewsReader from './pages/ProjectNewsReader';
 import ProjectStockIt from './pages/ProjectStockIt';
+import ProjectOroManager from './pages/ProjectOroManager';
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
                 <>
                   <Hero />
                   <About />
+                  <Experience />
                   <Projects />
                   <Contact />
                 </>
@@ -51,6 +54,10 @@ function App() {
               element={<ProjectNewsReader />}
             />
             <Route path='/projects/stockit' element={<ProjectStockIt />} />
+            <Route
+              path='/projects/ProjectOroManager'
+              element={<ProjectOroManager />}
+            />
           </Routes>
           <Footer />
         </Router>
