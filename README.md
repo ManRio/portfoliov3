@@ -4,7 +4,12 @@
 
 ---
 
-## 🚀 Tecnologías principales
+![React](https://img.shields.io/badge/React-2023-blue?logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-utility--first-06B6D4?logo=tailwindcss)
+![Vite](https://img.shields.io/badge/Vite-fast-646CFF?logo=vite)
+![Deployed on Vercel](https://img.shields.io/badge/Deployed-Vercel-000?logo=vercel)
+
+## 🛠️ Tecnologías principales
 
 - ⚛️ React
 - 💨 TailwindCSS
@@ -29,7 +34,7 @@
 
 ---
 
-## 📂 Estructura del proyecto
+## 🗂 Estructura del proyecto
 
 ```bash
 📁 public
@@ -49,7 +54,7 @@
 
 ---
 
-## 🧪 Instalación local
+## 🧪 Cómo usarlo localmente
 
 1. Clona el repositorio:
 
@@ -72,7 +77,7 @@ npm run dev
 
 ---
 
-## 📦 Despliegue
+## 🚀 Despliegue
 
 Este proyecto está desplegado con **[Vercel](https://vercel.com/)**. Puedes ver el resultado en:
 
@@ -89,9 +94,11 @@ Este proyecto está desplegado con **[Vercel](https://vercel.com/)**. Puedes ver
 
 ---
 
-## 📄 Licencia
+## ⚖️ Licencia
 
-Este proyecto es de uso personal. Si deseas usarlo como base, menciona la autoría o contacta previamente. ✌️
+> ¿Te ha gustado este portfolio?
+> Puedes usarlo como inspiración, clonarlo para aprender o adaptarlo a tu estilo.
+> Si lo haces, me encantaría que me mencionaras o me escribieras. ¡Estoy siempre abierto a colaborar!
 
 ---
 
