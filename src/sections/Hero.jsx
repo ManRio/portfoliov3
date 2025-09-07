@@ -18,7 +18,7 @@ function Hero() {
           ¡Hola!, Soy Manuel Ríos
         </motion.p>
 
-        <motion.h2
+         <motion.h2
           initial={{ opacity: 0, y: 80 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}

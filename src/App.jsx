@@ -14,6 +14,8 @@ import ProjectLanding from './pages/ProjectLanding';
 import ProjectNewsReader from './pages/ProjectNewsReader';
 import ProjectStockIt from './pages/ProjectStockIt';
 import ProjectOroManager from './pages/ProjectOroManager';
+import ProjectFitTrack from './pages/ProjectFitTrack';
+import ProjectTaskGamification from './pages/ProjectTaskGamification';
 
 function App() {
   return (
@@ -57,6 +59,14 @@ function App() {
             <Route
               path='/projects/ProjectOroManager'
               element={<ProjectOroManager />}
+            />
+            <Route
+              path='/projects/ProjectFitTrack'
+              element={<ProjectFitTrack />}
+            />
+            <Route
+              path='/projects/ProjectTaskGamification'
+              element={<ProjectTaskGamification />}
             />
           </Routes>
           <Footer />

@@ -25,6 +25,9 @@ import {
   SiPrestashop,
   SiTypescript,
   SiTailwindcss,
+  SiVuedotjs,
+  SiPython,
+  SiFlask,
 } from 'react-icons/si';
 import { FaCogs } from 'react-icons/fa';
 
@@ -50,12 +53,15 @@ function TechStack() {
         <IconWithLabel icon={<FaAngular />} label='Angular' />
         <IconWithLabel icon={<FaJava />} label='Java' />
         <IconWithLabel icon={<FaLaptopCode />} label='C#' />
+        <IconWithLabel icon={<SiPython />} label='Python' />
+        <IconWithLabel icon={<SiFlask />} label='Flask' />
         <IconWithLabel icon={<FaDatabase />} label='SQL' />
         <IconWithLabel icon={<SiMysql />} label='MySQL' />
         <IconWithLabel icon={<SiMongodb />} label='MongoDB' />
         <IconWithLabel icon={<FaNodeJs />} label='Node.js' />
         <IconWithLabel icon={<SiExpress />} label='Express' />
         <IconWithLabel icon={<SiTailwindcss />} label='TailwindCSS' />
+        <IconWithLabel icon={<SiVuedotjs />} label='Vue.js' />
         <IconWithLabel icon={<FaTools />} label='VS Code' />
         <IconWithLabel icon={<FaServer />} label='XAMPP' />
         <IconWithLabel icon={<FaBug />} label='Postman' />

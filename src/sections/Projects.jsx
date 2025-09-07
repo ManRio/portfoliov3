@@ -49,6 +49,26 @@ const projects = [
     codeLink: 'https://github.com/ManRio/OroManager', // opcional o privado
     external: false,
   },
+  {
+    id: 6,
+    title: 'FitTrack',
+    description:
+      'Aplicación de seguimiento de ejercicio con Angular. Llamadas a API de Ejercicios, noticias relacionadas y gestión del perfil de usuario para medir el progreso diario.',
+    image: '/assets/FitTrack-Landing.png',
+    demoLink: '/projects/ProjectFitTrack',
+    codeLink: 'https://github.com/ManRio/fittrack',
+    external: false,
+  },
+  {
+    id: 7,
+    title: 'Task Gamification',
+    description:
+      'Plataforma gamificada de gestión de tareas para alumnos y profesores. Back con Flask y front en Vue.js.',
+    image: '/assets/landing_task_gamification.png',
+    demoLink: '/projects/ProjectTaskGamification',
+    codeLink: 'https://github.com/ManRio/task_gamification',
+    external: false,
+  },
 ];
 
 function Projects() {

@@ -16,7 +16,7 @@ function Footer() {
             reservados.
           </p>
           <p className='text-gray-500'>
-            Desarrollado con ❤️ usando React & TailwindCSS
+            Desarrollado usando React & TailwindCSS
           </p>
         </div>
         <div className='flex gap-6'>
