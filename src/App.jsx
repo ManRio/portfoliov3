@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Preloader from './components/Preloader';
 
 import Hero from './sections/Hero';
 import About from './sections/About';
@@ -30,9 +29,8 @@ function App() {
       </div>
 
       {/* Capa semitransparente encima del fondo */}
-      <div className='relative z-10 bg-black/80 min-h-screen'>
+      <div className='relative z-10 min-h-screen'>
         <Router>
-          <Preloader />
           <Navbar />
           <Routes>
             <Route

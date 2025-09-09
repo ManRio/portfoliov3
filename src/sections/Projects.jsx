@@ -1,4 +1,9 @@
-import { motion } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
+import './projects.css';
 
 const projects = [
   {
@@ -46,7 +51,7 @@ const projects = [
       'Plataforma web desarrollada durante las prácticas FCT para la gestión integral de empleados: recompensas, tareas, formación, chat grupal y más.',
     image: '/assets/OroManager.png',
     demoLink: '/projects/ProjectOroManager',
-    codeLink: 'https://github.com/ManRio/OroManager', // opcional o privado
+    codeLink: 'https://github.com/ManRio/OroManager',
     external: false,
   },
   {
@@ -75,63 +80,78 @@ function Projects() {
   return (
     <section
       id='projects'
-      className='min-h-screen bg-transparent text-white px-6 py-20 overflow-hidden'
+      className='min-h-screen w-full bg-transparent text-white flex flex-col px-6'
     >
-      <div className='max-w-6xl mx-auto flex flex-col gap-16'>
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className='text-4xl sm:text-5xl font-montserrat font-bold text-center mb-10'
-        >
-          Proyectos
-        </motion.h2>
+      {/* Título */}
+      <h2 className='text-4xl sm:text-5xl font-montserrat font-bold text-center mt-10'>
+        Proyectos
+      </h2>
 
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10'>
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true, amount: 0.4 }}
-              className='flex flex-col items-center bg-white/10 p-4 rounded-xl shadow-md hover:shadow-lg transition duration-300 text-center'
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className='w-full h-40 object-contain mb-4 rounded-md'
-              />
-              <h3 className='text-xl font-montserrat font-bold mb-2'>
-                {project.title}
-              </h3>
-              <p className='text-gray-300 font-code text-sm mb-4'>
-                {project.description}
-              </p>
-              <div className='flex gap-3 justify-center flex-wrap'>
-                <a
-                  href={project.demoLink}
-                  target={project.external ? '_blank' : '_self'}
-                  rel='noopener noreferrer'
-                  className='px-4 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-md text-xs font-semibold transition'
-                >
-                  Ver Demo
-                </a>
-                {project.codeLink && (
+      {/* Carrusel */}
+      <div className='flex-1 flex items-center justify-center relative'>
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          loop={true}
+          centeredSlides={true}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          spaceBetween={40}
+          className='projects-swiper'
+        >
+          {projects.map((project) => (
+            <SwiperSlide key={project.id}>
+              <div className='project-card flex flex-col text-center'>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className='w-full h-40 object-contain mb-4 rounded-md'
+                />
+                <h3 className='text-xl font-montserrat font-bold mb-2'>
+                  {project.title}
+                </h3>
+                <p className='text-gray-300 font-code text-sm mb-4'>
+                  {project.description}
+                </p>
+                <div className='flex gap-3 justify-center flex-wrap mt-auto'>
                   <a
-                    href={project.codeLink}
-                    target='_blank'
+                    href={project.demoLink}
+                    target={project.external ? '_blank' : '_self'}
                     rel='noopener noreferrer'
-                    className='px-4 py-1.5 bg-gray-700 hover:bg-gray-600 text-white rounded-md text-xs font-semibold transition'
+                    className='px-4 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-md text-xs font-semibold transition'
                   >
-                    Ver Código
+                    Ver Demo
                   </a>
-                )}
+                  {project.codeLink && (
+                    <a
+                      href={project.codeLink}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='px-4 py-1.5 bg-gray-700 hover:bg-gray-600 text-white rounded-md text-xs font-semibold transition'
+                    >
+                      Ver Código
+                    </a>
+                  )}
+                </div>
               </div>
-            </motion.div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
+
+        {/* Flechas */}
+        <div className='swiper-button-prev custom-line-arrow'></div>
+        <div className='swiper-button-next custom-line-arrow'></div>
       </div>
     </section>
   );

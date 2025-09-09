@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 import { FaHandPointRight } from 'react-icons/fa';
-import { Link } from 'react-scroll'; // ✅ Importamos Link de react-scroll
+import './hiringbanner.css';
 
 function HiringBanner() {
   return (
@@ -9,16 +10,16 @@ function HiringBanner() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className='w-full bg-cyan-700 text-white py-6 px-4 text-center shadow-md rounded-lg mt-10 cursor-pointer hover:bg-cyan-600 transition-colors'
+      className='w-full glass-banner text-white py-6 px-6 text-center rounded-xl mt-10 cursor-pointer transition'
     >
       <Link
         to='contact'
         smooth={true}
         duration={600}
-        offset={-50} // puedes ajustarlo según tu diseño
+        offset={-50}
         className='flex flex-col sm:flex-row justify-center items-center gap-4'
       >
-        <FaHandPointRight className='text-3xl animate-pulse' />
+        <FaHandPointRight className='text-3xl animate-pulse text-cyan-300' />
         <p className='text-lg sm:text-xl font-semibold'>
           Actualmente{' '}
           <span className='text-yellow-300'>disponible para incorporación</span>{' '}
