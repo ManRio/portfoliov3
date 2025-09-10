@@ -69,7 +69,7 @@ function Contact() {
             viewport={{ once: true }}
             className='bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg p-8 flex flex-col items-center text-center gap-6 hover:border-cyan-400/40 hover:shadow-cyan-500/30 transition'
           >
-            <h3 className='text-2xl font-semibold mb-4 font-code text-cyan-400'>
+            <h3 className='text-2xl font-semibold mb-4 font-code text-white'>
               Conecta conmigo
             </h3>
             <a
@@ -104,7 +104,7 @@ function Contact() {
             viewport={{ once: true }}
             className='bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg p-8 flex flex-col items-center hover:border-cyan-400/40 hover:shadow-cyan-500/30 transition'
           >
-            <h3 className='text-2xl font-semibold mb-6 font-code text-cyan-400'>
+            <h3 className='text-2xl font-semibold mb-6 font-code text-white'>
               Envíame un mensaje
             </h3>
             <form
@@ -140,7 +140,7 @@ function Contact() {
               ></textarea>
               <button
                 type='submit'
-                className='bg-cyan-500 hover:bg-cyan-400 text-white font-bold py-3 rounded-lg transition w-full font-code shadow-md hover:shadow-cyan-500/30'
+                className='block w-full text-center py-4 px-6 rounded-xl font-semibold text-white glass-button hover:cursor-pointer transition'
               >
                 Enviar
               </button>

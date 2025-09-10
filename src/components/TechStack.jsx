@@ -42,7 +42,7 @@ function TechStack({ compact = false }) {
     >
       {/* Lenguajes */}
       <div className='glass-card p-6 text-center'>
-        <h3 className='font-bold mb-4 text-cyan-400'>Lenguajes</h3>
+        <h3 className='font-bold mb-4 text-white'>Lenguajes</h3>
         <div className='grid grid-cols-3 gap-4 text-3xl'>
           <IconWithLabel
             icon={<FaHtml5 className='text-orange-500' />}
@@ -85,7 +85,7 @@ function TechStack({ compact = false }) {
 
       {/* Frameworks */}
       <div className='glass-card p-6 text-center'>
-        <h3 className='font-bold mb-4 text-cyan-400'>Frameworks & Librerías</h3>
+        <h3 className='font-bold mb-4 text-white'>Frameworks & Librerías</h3>
         <div className='grid grid-cols-3 gap-4 text-3xl'>
           <IconWithLabel
             icon={<FaReact className='text-cyan-400' />}
@@ -128,7 +128,7 @@ function TechStack({ compact = false }) {
 
       {/* Herramientas */}
       <div className='glass-card p-6 text-center'>
-        <h3 className='font-bold mb-4 text-cyan-400'>Herramientas</h3>
+        <h3 className='font-bold mb-4 text-white'>Herramientas</h3>
         <div className='grid grid-cols-3 gap-4 text-3xl'>
           <IconWithLabel
             icon={<FaGitAlt className='text-orange-500' />}

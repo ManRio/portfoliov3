@@ -33,7 +33,7 @@ function About() {
             <h2 className='text-4xl sm:text-5xl font-montserrat font-bold mb-6'>
               Sobre mí
             </h2>
-            <p className='text-lg md:text-xl text-gray-300 leading-relaxed font-code mb-8'>
+            <p className='text-lg md:text-xl text-white leading-relaxed font-code mb-8'>
               Soy un desarrollador web apasionado por la <b>tecnología</b> y la{' '}
               <b>innovación</b>. Me motiva aprender cada día, explorar nuevas
               herramientas y contribuir con <b>soluciones creativas</b> dentro
@@ -43,13 +43,9 @@ function About() {
             </p>
 
             <a
-              href='/CV_ManuelRios_JUlio2025.pdf'
+              href='/Manuel_Rios_CV_Sept25.pdf'
               download
-              className='block w-full text-center px-6 py-4 
-             bg-cyan-600/30 backdrop-blur-lg border border-cyan-500/30
-             rounded-lg shadow-md transition duration-300
-             hover:bg-cyan-500/40 hover:border-cyan-400
-             font-semibold text-cyan-300'
+              className='block w-full text-center py-4 px-6 rounded-xl font-semibold text-white glass-button hover:cursor-pointer transition'
             >
               📄 Descarga mi CV
             </a>

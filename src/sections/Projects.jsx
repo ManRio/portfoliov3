@@ -138,10 +138,10 @@ function Projects() {
                   alt={project.title}
                   className='w-full h-40 object-contain mb-4 rounded-md'
                 />
-                <h3 className='text-xl font-montserrat font-bold mb-2'>
+                <h3 className='text-xl text-white font-montserrat font-bold mb-2'>
                   {project.title}
                 </h3>
-                <p className='text-gray-300 font-code text-sm mb-4'>
+                <p className='text-white font-code text-sm mb-4'>
                   {project.description}
                 </p>
                 <div className='flex gap-3 justify-center flex-wrap mt-auto'>
@@ -149,7 +149,7 @@ function Projects() {
                     href={project.demoLink}
                     target={project.external ? '_blank' : '_self'}
                     rel='noopener noreferrer'
-                    className='px-4 py-1.5 bg-cyan-500 hover:bg-cyan-400 text-white rounded-md text-xs font-semibold transition'
+                    className='px-4 py-1.5 bg-cyan-700 hover:bg-cyan-600 text-white rounded-md text-xs font-semibold transition'
                   >
                     Ver Demo
                   </a>
@@ -158,7 +158,7 @@ function Projects() {
                       href={project.codeLink}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='px-4 py-1.5 bg-gray-700 hover:bg-gray-600 text-white rounded-md text-xs font-semibold transition'
+                      className='px-4 py-1.5 bg-gray-800 hover:bg-gray-600 text-white rounded-md text-xs font-semibold transition'
                     >
                       Ver Código
                     </a>

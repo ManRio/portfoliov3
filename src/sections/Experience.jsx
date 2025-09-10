@@ -58,10 +58,10 @@ function Experience() {
             viewport={{ once: true }}
             className='bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/10 rounded-xl shadow-lg p-6 md:p-10 hover:border-cyan-400/40 hover:shadow-cyan-500/30 transition'
           >
-            <h3 className='text-2xl font-bold font-montserrat mb-2 text-cyan-400'>
+            <h3 className='text-2xl font-bold font-montserrat mb-2 text-white'>
               {job.title}
             </h3>
-            <p className='text-sm text-gray-400 mb-4'>{job.period}</p>
+            <p className='text-sm text-gray-100 mb-4'>{job.period}</p>
             <ul className='list-disc list-inside text-gray-300 font-code space-y-2'>
               {job.tasks.map((task, i) => (
                 <li key={i}>{task}</li>
