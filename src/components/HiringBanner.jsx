@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { FaHandPointRight } from 'react-icons/fa';
-import './hiringbanner.css';
+import './hiringBanner.css';
 
 function HiringBanner() {
   return (
