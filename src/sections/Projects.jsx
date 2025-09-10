@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay, EffectCoverflow } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
@@ -9,7 +9,8 @@ const projects = [
   {
     id: 1,
     title: 'StockIt',
-    description: 'Gestión de inventarios moderna para almacenes y tiendas.',
+    description:
+      'Gestión de inventarios moderna para almacenes y tiendas. Control de stock, ventas y clientes.',
     image: '/assets/LogoStockIt.png',
     demoLink: '/projects/stockit',
     codeLink: 'https://github.com/ManRio/StockIt',
@@ -19,7 +20,7 @@ const projects = [
     id: 2,
     title: 'Landing Page Responsive',
     description:
-      'Landing page responsive construida para prácticas de maquetación moderna.',
+      'Frontend de Landing page responsive construida para prácticas de maquetación moderna.',
     image: '/assets/landing.jpg',
     demoLink: '/projects/landingpageresponsive',
     codeLink: 'https://github.com/ManRio/landingPageResponsive',
@@ -28,7 +29,8 @@ const projects = [
   {
     id: 3,
     title: 'Jamar',
-    description: 'Aplicación de gestión empresarial con Deploy online.',
+    description:
+      'Aplicación de gestión empresarial con Deploy online para la promoción de un servicio de gestión de contenidos, redes sociales y páginas web.',
     image: '/assets/jamar.jpg',
     demoLink: 'http://jamarmedia.es/inicio',
     codeLink: 'https://github.com/ManRio/jamar',
@@ -38,7 +40,7 @@ const projects = [
     id: 4,
     title: 'NewsReader',
     description:
-      'Lector de noticias personalizadas por IA con perfil y favoritos.',
+      'Lector de noticias personalizadas por IA con perfil y favoritos. Consumo de API de noticias y generación de resúmenes con OpenAI.',
     image: '/assets/NewsReaderFeed.png',
     demoLink: '/projects/ProjectNewsReader',
     codeLink: 'https://github.com/ManRio/newsreader',
@@ -82,15 +84,13 @@ function Projects() {
       id='projects'
       className='min-h-screen w-full bg-transparent text-white flex flex-col px-6'
     >
-      {/* Título */}
       <h2 className='text-4xl sm:text-5xl font-montserrat font-bold text-center mt-10'>
         Proyectos
       </h2>
 
-      {/* Carrusel */}
       <div className='flex-1 flex items-center justify-center relative'>
         <Swiper
-          modules={[Navigation, Autoplay]}
+          modules={[Navigation, Autoplay, EffectCoverflow]}
           navigation={{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -102,16 +102,21 @@ function Projects() {
           }}
           loop={true}
           centeredSlides={true}
-          slidesPerView={1}
-          breakpoints={{
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+          slidesPerView={3} // IMPORTANTE para coverflow real
+          speed={650}
+          effect='coverflow'
+          coverflowEffect={{
+            rotate: 35, // giro de las laterales
+            stretch: 0,
+            depth: 220, // profundidad 3D
+            modifier: 1.15, // intensidad global
+            scale: 0.86, // escalado de laterales
+            slideShadows: false,
           }}
-          spaceBetween={40}
           className='projects-swiper'
         >
           {projects.map((project) => (
-            <SwiperSlide key={project.id}>
+            <SwiperSlide key={project.id} className='project-slide'>
               <div className='project-card flex flex-col text-center'>
                 <img
                   src={project.image}
@@ -149,7 +154,6 @@ function Projects() {
           ))}
         </Swiper>
 
-        {/* Flechas */}
         <div className='swiper-button-prev custom-line-arrow'></div>
         <div className='swiper-button-next custom-line-arrow'></div>
       </div>

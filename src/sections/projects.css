@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 100vw;
   position: relative;
+  padding: 2rem 0;
 }
 
 /* Dejar salir el glow */
@@ -14,35 +15,38 @@
   overflow: visible !important;
 }
 
-/* Card base */
+/* Cada slide necesita un ancho fijo para el coverflow */
+.project-slide {
+  width: 360px; /* ajusta a tu gusto (320–400) */
+  height: auto;
+}
+
+/* Card base (sin transform aquí para no pelear con Swiper) */
 .project-card {
   @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg p-6 transition-all duration-500;
   min-height: 400px;
   max-height: 500px;
   aspect-ratio: 4/5;
   margin: auto;
-  transform: scale(0.8);
-  opacity: 0.3;
+  opacity: 0.35;
 }
 
 /* Card central activa con glow animado */
 .swiper-slide-active .project-card {
   @apply opacity-100;
-  transform: scale(1);
   border: 2px solid rgba(34, 211, 238, 0.6);
   position: relative;
   z-index: 20;
-  animation: neon-pulse-card 3s infinite ease-in-out; /* 👈 animación */
+  animation: neon-pulse-card 3s infinite ease-in-out;
 }
 
-/* Cards laterales */
-.swiper-slide-prev .project-card,
-.swiper-slide-next .project-card {
-  @apply opacity-40;
-  transform: scale(0.85);
+/* (Opcional) dar un pelín más de tamaño visual a la activa con scale,
+   pero sobre el SLIDE, no sobre la card */
+.swiper-slide-active {
+  transform: translateZ(0) scale(1.02) !important;
 }
 
-/* Flechas lineales */
+/* Flechas */
 .custom-line-arrow {
   position: absolute;
   top: 50%;
@@ -50,7 +54,6 @@
   z-index: 100;
 }
 
-/* Estilo base de las flechas */
 .swiper-button-prev,
 .swiper-button-next {
   color: rgba(34, 211, 238, 1) !important;
@@ -69,36 +72,35 @@
 .swiper-button-prev {
   left: 1rem;
 }
-
 .swiper-button-next {
   right: 1rem;
 }
 
-/* Animación de pulso neón (flechas) */
+/* Pulso neón flechas */
 @keyframes neon-pulse {
   0% {
     text-shadow: 0 0 5px rgba(34, 211, 238, 0.6),
-      0 0 15px rgba(34, 211, 238, 0.6), 0 0 30px rgba(34, 211, 238, 0.4);
+      0 0 15px rgba(34, 211, 238, 0.6);
   }
   50% {
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.9),
-      0 0 25px rgba(34, 211, 238, 0.7), 0 0 50px rgba(34, 211, 238, 0.6);
+    text-shadow: 0 0 15px rgba(34, 211, 238, 0.9),
+      0 0 40px rgba(34, 211, 238, 0.6);
   }
   100% {
     text-shadow: 0 0 5px rgba(34, 211, 238, 0.6),
-      0 0 15px rgba(34, 211, 238, 0.6), 0 0 30px rgba(34, 211, 238, 0.4);
+      0 0 15px rgba(34, 211, 238, 0.6);
   }
 }
 
-/* Animación de pulso neón (card central) */
+/* Pulso neón card central */
 @keyframes neon-pulse-card {
   0% {
     box-shadow: 0 0 30px rgba(34, 211, 238, 0.6),
       0 0 60px rgba(34, 211, 238, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(34, 211, 238, 0.9),
-      0 0 80px rgba(34, 211, 238, 0.6);
+    box-shadow: 0 0 50px rgba(34, 211, 238, 0.9),
+      0 0 90px rgba(34, 211, 238, 0.6);
   }
   100% {
     box-shadow: 0 0 30px rgba(34, 211, 238, 0.6),
@@ -106,7 +108,7 @@
   }
 }
 
-/* Evitar scroll horizontal global */
+/* Evitar scroll lateral */
 html,
 body {
   overflow-x: hidden;
