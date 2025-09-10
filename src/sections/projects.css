@@ -17,11 +17,11 @@
 
 /* Cada slide necesita un ancho fijo para el coverflow */
 .project-slide {
-  width: 360px; /* ajusta a tu gusto (320–400) */
+  width: 360px;
   height: auto;
 }
 
-/* Card base (sin transform aquí para no pelear con Swiper) */
+/* Card base */
 .project-card {
   @apply bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 rounded-xl shadow-lg p-6 transition-all duration-500;
   min-height: 400px;
@@ -40,8 +40,7 @@
   animation: neon-pulse-card 3s infinite ease-in-out;
 }
 
-/* (Opcional) dar un pelín más de tamaño visual a la activa con scale,
-   pero sobre el SLIDE, no sobre la card */
+/* (Opcional) dar un pelín más de tamaño visual a la activa */
 .swiper-slide-active {
   transform: translateZ(0) scale(1.02) !important;
 }

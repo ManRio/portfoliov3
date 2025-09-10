@@ -84,10 +84,12 @@ function Projects() {
       id='projects'
       className='min-h-screen w-full bg-transparent text-white flex flex-col px-6'
     >
+      {/* Título */}
       <h2 className='text-4xl sm:text-5xl font-montserrat font-bold text-center mt-10'>
         Proyectos
       </h2>
 
+      {/* Carrusel */}
       <div className='flex-1 flex items-center justify-center relative'>
         <Swiper
           modules={[Navigation, Autoplay, EffectCoverflow]}
@@ -102,16 +104,29 @@ function Projects() {
           }}
           loop={true}
           centeredSlides={true}
-          slidesPerView={3} // IMPORTANTE para coverflow real
           speed={650}
           effect='coverflow'
-          coverflowEffect={{
-            rotate: 35, // giro de las laterales
-            stretch: 0,
-            depth: 220, // profundidad 3D
-            modifier: 1.15, // intensidad global
-            scale: 0.86, // escalado de laterales
-            slideShadows: false,
+          breakpoints={{
+            0: {
+              slidesPerView: 1, // 👈 en móviles solo 1 tarjeta
+              coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 0,
+                scale: 1,
+              },
+            },
+            768: {
+              slidesPerView: 3, // 👈 a partir de tablet, coverflow real
+              coverflowEffect: {
+                rotate: 35,
+                stretch: 0,
+                depth: 220,
+                modifier: 1.15,
+                scale: 0.86,
+                slideShadows: false,
+              },
+            },
           }}
           className='projects-swiper'
         >
@@ -154,6 +169,7 @@ function Projects() {
           ))}
         </Swiper>
 
+        {/* Flechas */}
         <div className='swiper-button-prev custom-line-arrow'></div>
         <div className='swiper-button-next custom-line-arrow'></div>
       </div>
