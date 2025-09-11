@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -6,75 +6,77 @@ import { useLocation, useNavigate } from 'react-router-dom';
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeId, setActiveId] = useState('hero'); // 👈 sección activa
+  const [activeId, setActiveId] = useState('hero'); // sección activa (solo lectura)
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Lista de secciones controladas por el spy
+  // IDs de secciones
   const sections = useMemo(
     () => ['hero', 'about', 'experience', 'projects', 'contact'],
     []
   );
 
-  // Detecta desplazamiento para aplicar fondo translúcido
+  // Fondo translúcido al hacer scroll
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Scroll con offset (navbar fijo)
+  // ✅ Scroll que ya te funcionaba (con scroll-padding-top en CSS)
   const scrollTo = (sectionId) => {
     const go = () => {
       const el = document.getElementById(sectionId);
       if (!el) return;
-      const navbarOffset = 80; // coincide con scroll-padding-top
-      const y = el.getBoundingClientRect().top + window.scrollY - navbarOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
 
     if (location.pathname !== '/') {
       navigate('/');
-      setTimeout(go, 120);
+      setTimeout(go, 120); // deja montar Home y luego scroll
     } else {
       go();
     }
   };
 
-  // IntersectionObserver → actualiza activeId según la sección visible
+  // 🔎 ScrollSpy no intrusivo (solo lee y marca activo)
   useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => {
-        // Elegimos la entry con mayor intersección
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const navbarOffset = 80; // debe coincidir con tu scroll-padding-top
+    const handler = () => {
+      const fromTop = window.scrollY + navbarOffset + 1;
+      let current = 'hero';
 
-        if (visible?.target?.id) {
-          setActiveId(visible.target.id);
-        }
-      },
-      {
-        // “sandwich” para que cuente cuando el centro de la sección está en viewport
-        root: null,
-        rootMargin: '-45% 0px -45% 0px',
-        threshold: [0, 0.25, 0.5, 0.75, 1],
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.offsetTop;
+        if (fromTop >= top) current = id;
+        else break; // secciones en orden vertical
       }
-    );
 
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) io.observe(el);
-    });
+      setActiveId(current);
+    };
 
-    return () => io.disconnect();
+    handler(); // marcar al cargar
+    window.addEventListener('scroll', handler, { passive: true });
+    window.addEventListener('resize', handler);
+    return () => {
+      window.removeEventListener('scroll', handler);
+      window.removeEventListener('resize', handler);
+    };
   }, [sections]);
 
-  // Estilo para item activo (glow, sin underline)
   const glowActive =
     'text-cyan-300 drop-shadow-[0_0_12px_rgba(34,211,238,0.85)] font-semibold';
   const baseLink =
     'transition hover:text-cyan-400 hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.8)]';
+
+  const navItems = [
+    { id: 'about', label: 'Sobre mí' },
+    { id: 'experience', label: 'Experiencia' },
+    { id: 'projects', label: 'Proyectos' },
+    { id: 'contact', label: 'Contacto' },
+  ];
 
   return (
     <motion.nav
@@ -101,12 +103,7 @@ function Navbar() {
 
         {/* Navegación escritorio */}
         <ul className='hidden md:flex gap-8 text-white text-sm font-medium'>
-          {[
-            { id: 'about', label: 'Sobre mí' },
-            { id: 'experience', label: 'Experiencia' },
-            { id: 'projects', label: 'Proyectos' },
-            { id: 'contact', label: 'Contacto' },
-          ].map((item) => (
+          {navItems.map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => scrollTo(item.id)}
@@ -137,12 +134,7 @@ function Navbar() {
       {/* Menú móvil */}
       {menuOpen && (
         <div className='md:hidden px-6 pb-6 flex flex-col gap-6 text-white text-lg font-medium bg-black/80 backdrop-blur-md'>
-          {[
-            { id: 'about', label: 'Sobre mí' },
-            { id: 'experience', label: 'Experiencia' },
-            { id: 'projects', label: 'Proyectos' },
-            { id: 'contact', label: 'Contacto' },
-          ].map((item) => (
+          {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => {
