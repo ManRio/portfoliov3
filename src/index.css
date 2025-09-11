@@ -12,3 +12,10 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
 }
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden; /* evita scroll lateral */
+  overflow-y: auto; /* un único scroll vertical controlado */
+}

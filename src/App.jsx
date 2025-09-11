@@ -20,7 +20,7 @@ function App() {
   return (
     <div className='relative text-white'>
       {/* Fondo fijo */}
-      <div className='fixed top-0 left-0 w-full h-full z-0'>
+      <div className='fixed top-0 left-0 w-full h-full z-0 overflow-hidden'>
         <img
           src='/assets/bg-tech.png'
           alt='fondo tech'
