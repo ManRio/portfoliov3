@@ -2,9 +2,12 @@ import { motion } from 'framer-motion';
 import TechStack from '../components/TechStack';
 import foto from '/assets/foto2.png';
 import './about.css';
+import { useCanonical } from '../hooks/useCanonical';
 
 function About() {
+    useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   return (
+    <>
     <section
       id='about'
       className='min-h-screen bg-transparent text-white px-6 py-20 flex items-center'
@@ -64,6 +67,7 @@ function About() {
         </motion.div>
       </div>
     </section>
+    </>
   );
 }
 

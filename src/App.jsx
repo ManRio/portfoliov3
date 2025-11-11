@@ -15,62 +15,66 @@ import ProjectStockIt from './pages/ProjectStockIt';
 import ProjectOroManager from './pages/ProjectOroManager';
 import ProjectFitTrack from './pages/ProjectFitTrack';
 import ProjectTaskGamification from './pages/ProjectTaskGamification';
+import { useCanonical } from './hooks/useCanonical';
 
 function App() {
+  useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   return (
-    <div className='relative text-white'>
-      {/* Fondo fijo */}
-      <div className='fixed top-0 left-0 w-full h-full z-0 overflow-hidden'>
-        <img
-          src='/assets/bg-tech.png'
-          alt='fondo tech'
-          className='w-full h-full object-cover opacity-10'
-        />
-      </div>
+    <>
+      <div className='relative text-white'>
+        {/* Fondo fijo */}
+        <div className='fixed top-0 left-0 w-full h-full z-0 overflow-hidden'>
+          <img
+            src='/assets/bg-tech.png'
+            alt='fondo tech'
+            className='w-full h-full object-cover opacity-10'
+          />
+        </div>
 
-      {/* Capa semitransparente encima del fondo */}
-      <div className='relative z-10 min-h-screen'>
-        <Router>
-          <Navbar />
-          <Routes>
-            <Route
-              path='/'
-              element={
-                <>
-                  <Hero />
-                  <About />
-                  <Experience />
-                  <Projects />
-                  <Contact />
-                </>
-              }
-            />
-            <Route
-              path='/projects/landingpageresponsive'
-              element={<ProjectLanding />}
-            />
-            <Route
-              path='/projects/ProjectNewsReader'
-              element={<ProjectNewsReader />}
-            />
-            <Route path='/projects/stockit' element={<ProjectStockIt />} />
-            <Route
-              path='/projects/ProjectOroManager'
-              element={<ProjectOroManager />}
-            />
-            <Route
-              path='/projects/ProjectFitTrack'
-              element={<ProjectFitTrack />}
-            />
-            <Route
-              path='/projects/ProjectTaskGamification'
-              element={<ProjectTaskGamification />}
-            />
-          </Routes>
-          <Footer />
-        </Router>
+        {/* Capa semitransparente encima del fondo */}
+        <div className='relative z-10 min-h-screen'>
+          <Router>
+            <Navbar />
+            <Routes>
+              <Route
+                path='/'
+                element={
+                  <>
+                    <Hero />
+                    <About />
+                    <Experience />
+                    <Projects />
+                    <Contact />
+                  </>
+                }
+              />
+              <Route
+                path='/projects/landingpageresponsive'
+                element={<ProjectLanding />}
+              />
+              <Route
+                path='/projects/ProjectNewsReader'
+                element={<ProjectNewsReader />}
+              />
+              <Route path='/projects/stockit' element={<ProjectStockIt />} />
+              <Route
+                path='/projects/ProjectOroManager'
+                element={<ProjectOroManager />}
+              />
+              <Route
+                path='/projects/ProjectFitTrack'
+                element={<ProjectFitTrack />}
+              />
+              <Route
+                path='/projects/ProjectTaskGamification'
+                element={<ProjectTaskGamification />}
+              />
+            </Routes>
+            <Footer />
+          </Router>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

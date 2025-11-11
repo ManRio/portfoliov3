@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 import './projects.css';
+import { useCanonical } from '../hooks/useCanonical';
 
 const projects = [
   {
@@ -89,101 +90,104 @@ const projects = [
 ];
 
 function Projects() {
+    useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   return (
-    <section
-      id='projects'
-      className='min-h-screen w-full bg-transparent text-white flex flex-col px-6'
-    >
-      {/* Título */}
-      <h2 className='text-4xl sm:text-5xl font-montserrat font-bold text-center mt-10'>
-        Proyectos
-      </h2>
+    <>
+      <section
+        id='projects'
+        className='min-h-screen w-full bg-transparent text-white flex flex-col px-6'
+      >
+        {/* Título */}
+        <h2 className='text-4xl sm:text-5xl font-montserrat font-bold text-center mt-10'>
+          Proyectos
+        </h2>
 
-      {/* Carrusel */}
-      <div className='flex-1 flex items-center justify-center relative'>
-        <Swiper
-          modules={[Navigation, Autoplay, EffectCoverflow]}
-          navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          loop={true}
-          centeredSlides={true}
-          speed={650}
-          effect='coverflow'
-          breakpoints={{
-            0: {
-              slidesPerView: 1, // 👈 en móviles solo 1 tarjeta
-              coverflowEffect: {
-                rotate: 0,
-                stretch: 0,
-                depth: 0,
-                scale: 1,
+        {/* Carrusel */}
+        <div className='flex-1 flex items-center justify-center relative'>
+          <Swiper
+            modules={[Navigation, Autoplay, EffectCoverflow]}
+            navigation={{
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop={true}
+            centeredSlides={true}
+            speed={650}
+            effect='coverflow'
+            breakpoints={{
+              0: {
+                slidesPerView: 1, // 👈 en móviles solo 1 tarjeta
+                coverflowEffect: {
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 0,
+                  scale: 1,
+                },
               },
-            },
-            768: {
-              slidesPerView: 3, // 👈 a partir de tablet, coverflow real
-              coverflowEffect: {
-                rotate: 35,
-                stretch: 0,
-                depth: 220,
-                modifier: 1.15,
-                scale: 0.86,
-                slideShadows: false,
+              768: {
+                slidesPerView: 3, // 👈 a partir de tablet, coverflow real
+                coverflowEffect: {
+                  rotate: 35,
+                  stretch: 0,
+                  depth: 220,
+                  modifier: 1.15,
+                  scale: 0.86,
+                  slideShadows: false,
+                },
               },
-            },
-          }}
-          className='projects-swiper'
-        >
-          {projects.map((project) => (
-            <SwiperSlide key={project.id} className='project-slide'>
-              <div className='project-card flex flex-col text-center'>
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className='w-full h-40 object-contain mb-4 rounded-md'
-                />
-                <h3 className='text-xl text-white font-montserrat font-bold mb-2'>
-                  {project.title}
-                </h3>
-                <p className='text-white font-code text-sm mb-4'>
-                  {project.description}
-                </p>
-                <div className='flex gap-3 justify-center flex-wrap mt-auto'>
-                  <a
-                    href={project.demoLink}
-                    target={project.external ? '_blank' : '_self'}
-                    rel='noopener noreferrer'
-                    className='px-4 py-1.5 bg-cyan-700 hover:bg-cyan-600 text-white rounded-md text-xs font-semibold transition'
-                  >
-                    Ver Demo
-                  </a>
-                  {project.codeLink && (
+            }}
+            className='projects-swiper'
+          >
+            {projects.map((project) => (
+              <SwiperSlide key={project.id} className='project-slide'>
+                <div className='project-card flex flex-col text-center'>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className='w-full h-40 object-contain mb-4 rounded-md'
+                  />
+                  <h3 className='text-xl text-white font-montserrat font-bold mb-2'>
+                    {project.title}
+                  </h3>
+                  <p className='text-white font-code text-sm mb-4'>
+                    {project.description}
+                  </p>
+                  <div className='flex gap-3 justify-center flex-wrap mt-auto'>
                     <a
-                      href={project.codeLink}
-                      target='_blank'
+                      href={project.demoLink}
+                      target={project.external ? '_blank' : '_self'}
                       rel='noopener noreferrer'
-                      className='px-4 py-1.5 bg-gray-800 hover:bg-gray-600 text-white rounded-md text-xs font-semibold transition'
+                      className='px-4 py-1.5 bg-cyan-700 hover:bg-cyan-600 text-white rounded-md text-xs font-semibold transition'
                     >
-                      Ver Código
+                      Ver Demo
                     </a>
-                  )}
+                    {project.codeLink && (
+                      <a
+                        href={project.codeLink}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='px-4 py-1.5 bg-gray-800 hover:bg-gray-600 text-white rounded-md text-xs font-semibold transition'
+                      >
+                        Ver Código
+                      </a>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
-        {/* Flechas */}
-        <div className='swiper-button-prev custom-line-arrow'></div>
-        <div className='swiper-button-next custom-line-arrow'></div>
-      </div>
-    </section>
+          {/* Flechas */}
+          <div className='swiper-button-prev custom-line-arrow'></div>
+          <div className='swiper-button-next custom-line-arrow'></div>
+        </div>
+      </section>
+    </>
   );
 }
 
