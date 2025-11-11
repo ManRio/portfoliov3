@@ -81,7 +81,7 @@ function Contact() {
               <FaGithub size={24} /> GitHub
             </a>
             <a
-              href='https://www.linkedin.com/in/riosreinamanuel/'
+              href='https://www.linkedin.com/in/manuelriosdev/'
               target='_blank'
               rel='noopener noreferrer'
               className='flex items-center gap-3 px-6 py-3 w-full justify-center rounded-lg bg-blue-600/40 hover:bg-blue-700/60 border border-blue-500/40 text-lg font-code transition shadow-md hover:shadow-cyan-500/30'

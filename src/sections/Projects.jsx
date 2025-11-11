@@ -76,6 +76,16 @@ const projects = [
     codeLink: 'https://github.com/ManRio/task_gamification',
     external: false,
   },
+  {
+    id: 8,
+    title: 'Single Page Application Products',
+    description:
+      'Single Page Application moderna enfocada en una página de producto para una marca ficticia de guantes de boxeo personalizados.',
+    image: '/assets/spaproduct.png',
+    demoLink: 'https://spa-producto.vercel.app/',
+    codeLink: 'https://github.com/ManRio/spa-producto',
+    external: true,
+  },
 ];
 
 function Projects() {

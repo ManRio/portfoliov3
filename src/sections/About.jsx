@@ -43,7 +43,7 @@ function About() {
             </p>
 
             <a
-              href='/Manuel_Rios_CV_Sept25.pdf'
+              href='/Manuel_Rios_CV_Nov25.pdf'
               download
               className='block w-full text-center py-4 px-6 rounded-xl font-semibold text-white glass-button hover:cursor-pointer transition'
             >
