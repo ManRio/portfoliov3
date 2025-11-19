@@ -43,11 +43,6 @@
     0 0 45px rgba(34, 211, 238, 0.4);
 }
 
-/* (Opcional) dar un pelín más de tamaño visual a la activa */
-.swiper-slide-active {
-  transform: translateZ(0) scale(1.05) !important;
-}
-
 /* Flechas */
 .custom-line-arrow {
   position: absolute;
