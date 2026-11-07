@@ -1,193 +1,231 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay, EffectCoverflow } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-coverflow';
-import './projects.css';
-import { useCanonical } from '../hooks/useCanonical';
+import { Link } from 'react-router-dom';
+import { motion, useReducedMotion } from 'framer-motion';
 
-const projects = [
-  {
-    id: 1,
-    title: 'StockIt',
-    description:
-      'Gestión de inventarios moderna para almacenes y tiendas. Control de stock, ventas y clientes.',
-    image: '/assets/LogoStockIt.png',
-    demoLink: '/projects/stockit',
-    codeLink: 'https://github.com/ManRio/StockIt',
-    external: false,
-  },
-  {
-    id: 2,
-    title: 'Landing Page Responsive',
-    description:
-      'Frontend de Landing page responsive construida para prácticas de maquetación moderna.',
-    image: '/assets/landing.jpg',
-    demoLink: '/projects/landingpageresponsive',
-    codeLink: 'https://github.com/ManRio/landingPageResponsive',
-    external: false,
-  },
-  {
-    id: 3,
-    title: 'Jamar',
-    description:
-      'Aplicación de gestión empresarial con Deploy online para la promoción de un servicio de gestión de contenidos, redes sociales y páginas web.',
-    image: '/assets/jamar.jpg',
-    demoLink: 'http://jamarmedia.es/inicio',
-    codeLink: 'https://github.com/ManRio/jamar',
-    external: true,
-  },
-  {
-    id: 4,
-    title: 'NewsReader',
-    description:
-      'Lector de noticias personalizadas por IA con perfil y favoritos. Consumo de API de noticias y generación de resúmenes con OpenAI.',
-    image: '/assets/NewsReaderFeed.png',
-    demoLink: '/projects/ProjectNewsReader',
-    codeLink: 'https://github.com/ManRio/newsreader',
-    external: false,
-  },
-  {
-    id: 5,
-    title: 'ORO Manager',
-    description:
-      'Plataforma web desarrollada durante las prácticas FCT para la gestión integral de empleados: recompensas, tareas, formación, chat grupal y más.',
-    image: '/assets/OroManager.png',
-    demoLink: '/projects/ProjectOroManager',
-    codeLink: 'https://github.com/ManRio/OroManager',
-    external: false,
-  },
-  {
-    id: 6,
-    title: 'FitTrack',
-    description:
-      'Aplicación de seguimiento de ejercicio con Angular. Llamadas a API de Ejercicios, noticias relacionadas y gestión del perfil de usuario para medir el progreso diario.',
-    image: '/assets/FitTrack-Landing.png',
-    demoLink: '/projects/ProjectFitTrack',
-    codeLink: 'https://github.com/ManRio/fittrack',
-    external: false,
-  },
-  {
-    id: 7,
-    title: 'Task Gamification',
-    description:
-      'Plataforma gamificada de gestión de tareas para alumnos y profesores. Back con Flask y front en Vue.js.',
-    image: '/assets/landing_task_gamification.png',
-    demoLink: '/projects/ProjectTaskGamification',
-    codeLink: 'https://github.com/ManRio/task_gamification',
-    external: false,
-  },
-  {
-    id: 8,
-    title: 'Single Page Application Products',
-    description:
-      'Single Page Application moderna enfocada en una página de producto para una marca ficticia de guantes de boxeo personalizados.',
-    image: '/assets/spaproduct.png',
-    demoLink: 'https://spa-producto.vercel.app/',
-    codeLink: 'https://github.com/ManRio/spa-producto',
-    external: true,
-  },
-];
+import { ArrowUpRight, Layers3, Code2, ExternalLink } from 'lucide-react';
+
+import { FaGithub } from 'react-icons/fa';
+
+import { featuredProjects, otherProjects } from '../data/projects';
+
+import './projects-v4.css';
+
+// Rutas de casos prácticos que ya existen.
+// Las nuevas se añadirán cuando estén construidas.
+const availableCaseStudies = new Set([
+  '/projects/stockit',
+  '/projects/ProjectOroManager',
+  '/projects/ProjectTaskGamification',
+]);
+
+const projectVisuals = {
+  'pn-impresion-3d': 'PN.',
+  'verifactu-app': '{ API }',
+  stockit: 'ST.',
+  'oro-manager': 'ORO.',
+  'task-gamification': 'TG.',
+};
+
+function ProjectCard({ project, large = false, reduceMotion }) {
+  const hasCaseStudy =
+    project.caseStudyUrl && availableCaseStudies.has(project.caseStudyUrl);
+
+  return (
+    <motion.article
+      className={`projects-v4-card ${large ? 'projects-v4-card-large' : ''}`}
+      initial={reduceMotion ? false : { opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{
+        duration: reduceMotion ? 0 : 0.45,
+      }}
+    >
+      <div className={`projects-v4-visual projects-v4-visual-${project.id}`}>
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={`Imagen del proyecto ${project.title}`}
+            loading='lazy'
+            decoding='async'
+          />
+        ) : (
+          <div className='projects-v4-placeholder'>
+            <span className='projects-v4-placeholder-code'>
+              {projectVisuals[project.id] || '</>'}
+            </span>
+            <span>{project.subtitle}</span>
+          </div>
+        )}
+
+        <span className='projects-v4-category'>{project.category}</span>
+      </div>
+
+      <div className='projects-v4-card-body'>
+        <div className='projects-v4-card-heading'>
+          <div>
+            <p className='projects-v4-subtitle'>{project.subtitle}</p>
+            <h3>{project.title}</h3>
+          </div>
+
+          {hasCaseStudy && (
+            <Link
+              to={project.caseStudyUrl}
+              className='projects-v4-arrow'
+              aria-label={`Ver caso práctico de ${project.title}`}
+            >
+              <ArrowUpRight size={20} />
+            </Link>
+          )}
+        </div>
+
+        <p className='projects-v4-description'>{project.description}</p>
+
+        {large && (
+          <ul className='projects-v4-highlights'>
+            {project.highlights.slice(0, 3).map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        )}
+
+        <ul
+          className='projects-v4-stack'
+          aria-label={`Tecnologías de ${project.title}`}
+        >
+          {project.technologies.map((tech) => (
+            <li key={tech}>{tech}</li>
+          ))}
+        </ul>
+
+        <div className='projects-v4-card-footer'>
+          {hasCaseStudy && (
+            <Link to={project.caseStudyUrl} className='projects-v4-detail-link'>
+              Ver caso práctico
+              <ArrowUpRight size={15} />
+            </Link>
+          )}
+
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='projects-v4-detail-link'
+            >
+              Ver aplicación
+              <ExternalLink size={15} />
+            </a>
+          )}
+
+          {project.repositoryUrl && (
+            <a
+              href={project.repositoryUrl}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='projects-v4-github-link'
+              aria-label={`Código fuente de ${project.title}`}
+              title='Ver código en GitHub'
+            >
+              <FaGithub size={20} />
+            </a>
+          )}
+
+          {!hasCaseStudy && !project.demoUrl && !project.repositoryUrl && (
+            <span className='projects-v4-pending'>
+              Caso práctico en preparación
+            </span>
+          )}
+        </div>
+      </div>
+    </motion.article>
+  );
+}
 
 function Projects() {
-    useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
+  const reduceMotion = useReducedMotion();
+
   return (
-    <>
-      <section
-        id='projects'
-        className='min-h-screen w-full bg-transparent text-white flex flex-col px-6'
-      >
-        {/* Título */}
-        <h2 className='text-4xl sm:text-5xl font-montserrat font-bold text-center mt-10'>
-          Proyectos
-        </h2>
+    <section
+      id='projects'
+      className='projects-v4'
+      aria-labelledby='projects-v4-title'
+    >
+      <div className='projects-v4-container'>
+        <header className='projects-v4-header'>
+          <div>
+            <p className='projects-v4-eyebrow'>
+              <span>04 /</span> PROYECTOS
+            </p>
 
-        {/* Carrusel */}
-        <div className='flex-1 flex items-center justify-center relative'>
-          <Swiper
-            modules={[Navigation, Autoplay, EffectCoverflow]}
-            navigation={{
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            }}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            loop={true}
-            centeredSlides={true}
-            speed={650}
-            effect='coverflow'
-            breakpoints={{
-              0: {
-                slidesPerView: 1, // 👈 en móviles solo 1 tarjeta
-                coverflowEffect: {
-                  rotate: 0,
-                  stretch: 0,
-                  depth: 0,
-                  scale: 1,
-                },
-              },
-              768: {
-                slidesPerView: 3, // 👈 a partir de tablet, coverflow real
-                coverflowEffect: {
-                  rotate: 35,
-                  stretch: 0,
-                  depth: 220,
-                  modifier: 1.15,
-                  scale: 0.86,
-                  slideShadows: false,
-                },
-              },
-            }}
-            className='projects-swiper'
+            <h2 id='projects-v4-title' className='projects-v4-title'>
+              Proyectos que van
+              <span> más allá del código.</span>
+            </h2>
+
+            <p className='projects-v4-intro'>
+              Una selección de aplicaciones que he desarrollado, desde proyectos
+              propios hasta soluciones para clientes reales. Cada una representa
+              diferentes retos, tecnologías y aprendizajes.
+            </p>
+          </div>
+
+          <a
+            href='https://github.com/ManRio'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='projects-v4-github-button'
           >
-            {projects.map((project) => (
-              <SwiperSlide key={project.id} className='project-slide'>
-                <div className='project-card flex flex-col text-center'>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className='w-full h-40 object-contain mb-4 rounded-md'
-                  />
-                  <h3 className='text-xl text-white font-montserrat font-bold mb-2'>
-                    {project.title}
-                  </h3>
-                  <p className='text-white font-code text-sm mb-4'>
-                    {project.description}
-                  </p>
-                  <div className='flex gap-3 justify-center flex-wrap mt-auto'>
-                    <a
-                      href={project.demoLink}
-                      target={project.external ? '_blank' : '_self'}
-                      rel='noopener noreferrer'
-                      className='px-4 py-1.5 bg-cyan-700 hover:bg-cyan-600 text-white rounded-md text-xs font-semibold transition'
-                    >
-                      Ver Demo
-                    </a>
-                    {project.codeLink && (
-                      <a
-                        href={project.codeLink}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='px-4 py-1.5 bg-gray-800 hover:bg-gray-600 text-white rounded-md text-xs font-semibold transition'
-                      >
-                        Ver Código
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+            <FaGithub size={18} />
+            Mi GitHub
+            <ArrowUpRight size={16} />
+          </a>
+        </header>
 
-          {/* Flechas */}
-          <div className='swiper-button-prev custom-line-arrow'></div>
-          <div className='swiper-button-next custom-line-arrow'></div>
+        <div className='projects-v4-section-heading'>
+          <div className='projects-v4-section-icon'>
+            <Layers3 size={19} />
+          </div>
+          <div>
+            <h3>Proyectos destacados</h3>
+            <p>Desarrollo Full Stack y soluciones reales</p>
+          </div>
         </div>
-      </section>
-    </>
+
+        <div className='projects-v4-featured-grid'>
+          {featuredProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              large
+              reduceMotion={reduceMotion}
+            />
+          ))}
+        </div>
+
+        {otherProjects.length > 0 && (
+          <>
+            <div className='projects-v4-section-heading projects-v4-secondary-heading'>
+              <div className='projects-v4-section-icon'>
+                <Code2 size={19} />
+              </div>
+              <div>
+                <h3>Otros proyectos</h3>
+                <p>Experiencia, aprendizaje y nuevas tecnologías</p>
+              </div>
+            </div>
+
+            <div className='projects-v4-other-grid'>
+              {otherProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  reduceMotion={reduceMotion}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </section>
   );
 }
 

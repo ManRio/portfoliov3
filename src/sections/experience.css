@@ -1,0 +1,428 @@
+/* =========================================
+   PORTFOLIO V4 - EXPERIENCE
+========================================= */
+
+.experience-v4 {
+  position: relative;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(180deg, #0b1120 0%, #080d18 100%);
+  color: #f8fafc;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  scroll-margin-top: 80px;
+}
+
+.experience-v4-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.experience-v4-heading {
+  max-width: 760px;
+  margin-bottom: 4rem;
+}
+
+.experience-v4-eyebrow {
+  color: #22d3ee;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 1.5rem;
+}
+
+.experience-v4-eyebrow span {
+  color: #64748b;
+  margin-right: 0.5rem;
+}
+
+.experience-v4-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.experience-v4-title span {
+  color: #22d3ee;
+}
+
+.experience-v4-intro {
+  max-width: 700px;
+  color: #aebed1;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+/* =========================================
+   LÍNEA TEMPORAL
+========================================= */
+
+.experience-v4-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding-left: 3rem;
+}
+
+.experience-v4-timeline::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  left: 10px;
+
+  width: 2px;
+  background: linear-gradient(180deg, #22d3ee, rgba(34, 211, 238, 0.15));
+}
+
+.experience-v4-item {
+  position: relative;
+  min-width: 0;
+}
+
+.experience-v4-marker {
+  position: absolute;
+  top: 2.5rem;
+  left: -3rem;
+
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(34, 211, 238, 0.5);
+  border-radius: 50%;
+  background: #0b1120;
+  z-index: 2;
+}
+
+.experience-v4-marker span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22d3ee;
+}
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.experience-v4-card {
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+
+  background: #111b2c;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 18px;
+
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.experience-v4-card:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+}
+
+/* Proyecto destacado */
+
+.experience-v4-card-featured {
+  background: linear-gradient(140deg, #17263a, #101b2d);
+
+  border-color: rgba(34, 211, 238, 0.4);
+}
+
+/* Cabecera de tarjeta */
+
+.experience-v4-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.experience-v4-card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.experience-v4-number {
+  color: #22d3ee;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding-top: 0.3rem;
+}
+
+.experience-v4-type {
+  color: #67e8f9;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.experience-v4-card-heading h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.experience-v4-company {
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.experience-v4-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+
+  flex-shrink: 0;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+/* Descripción */
+
+.experience-v4-description {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.85;
+
+  margin-top: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Responsabilidades */
+
+.experience-v4-achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.experience-v4-achievements li {
+  position: relative;
+  padding-left: 1.35rem;
+
+  color: #aebed1;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.experience-v4-achievements li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: #22d3ee;
+}
+
+/* =========================================
+   TECNOLOGÍAS
+========================================= */
+
+.experience-v4-card-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.experience-v4-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.experience-v4-technologies li {
+  padding: 0.5rem 0.75rem;
+
+  color: #cdeef4;
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  background: rgba(34, 211, 238, 0.06);
+  border: 1px solid rgba(34, 211, 238, 0.16);
+  border-radius: 8px;
+}
+
+.experience-v4-note {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-top: 1.25rem;
+}
+
+/* =========================================
+   EXPERIENCIA PREVIA
+========================================= */
+
+.experience-v4-background {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  margin-top: 3rem;
+  margin-left: 3rem;
+  padding: 2rem;
+
+  background: rgba(30, 41, 59, 0.45);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 16px;
+}
+
+.experience-v4-background-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  color: #22d3ee;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  background: rgba(34, 211, 238, 0.06);
+  border-radius: 12px;
+}
+
+.experience-v4-background h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.experience-v4-background p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 960px) {
+  .experience-v4 {
+    padding: 5rem 1.5rem;
+  }
+
+  .experience-v4-card-top {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .experience-v4-meta {
+    align-items: flex-start;
+    padding-left: 1.8rem;
+    text-align: left;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MÓVIL
+========================================= */
+
+@media (max-width: 640px) {
+  .experience-v4 {
+    padding: 4.5rem 1.25rem;
+  }
+
+  .experience-v4-heading {
+    margin-bottom: 3rem;
+  }
+
+  .experience-v4-title {
+    font-size: clamp(2rem, 8vw, 2.7rem);
+  }
+
+  .experience-v4-timeline {
+    padding-left: 1.75rem;
+    gap: 1.5rem;
+  }
+
+  .experience-v4-timeline::before {
+    left: 7px;
+  }
+
+  .experience-v4-marker {
+    left: -1.75rem;
+    width: 16px;
+    height: 16px;
+  }
+
+  .experience-v4-marker span {
+    width: 6px;
+    height: 6px;
+  }
+
+  .experience-v4-card {
+    padding: 1.25rem;
+  }
+
+  .experience-v4-card-heading {
+    gap: 0.65rem;
+  }
+
+  .experience-v4-card-heading h3 {
+    font-size: 1.15rem;
+  }
+
+  .experience-v4-meta {
+    padding-left: 1.35rem;
+  }
+
+  .experience-v4-background {
+    margin-left: 0;
+    padding: 1.5rem;
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-v4 *,
+  .experience-v4 *::before,
+  .experience-v4 *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
