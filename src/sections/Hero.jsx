@@ -41,7 +41,7 @@ function Hero() {
         <div className='hero-v4-content'>
           <motion.div {...fadeUp(0.1)} className='hero-v4-status'>
             <span className='hero-v4-status-dot' aria-hidden='true' />
-            Disponible para oportunidades junior
+            Disponible para oportunidades
           </motion.div>
 
           <motion.p {...fadeUp(0.15)} className='hero-v4-intro'>
@@ -54,7 +54,7 @@ function Hero() {
           </motion.h1>
 
           <motion.p {...fadeUp(0.35)} className='hero-v4-description'>
-            Desarrollador Web Full Stack Junior especializado en React, Next.js
+            Desarrollador Web Full Stack especializado en React, Next.js
             y TypeScript.
             <br />
             <br />
