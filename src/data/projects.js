@@ -41,8 +41,8 @@ export const projects = [
     ],
 
     image: '/assets/projects/pn-impresion-3d/portada.webp',
-    demoUrl: null,
-    repositoryUrl: null,
+    demoUrl: 'https://pn3d.es',
+    repositoryUrl: 'https://github.com/ManRio/pn-impresion-3d',
     caseStudyUrl: '/projects/pn-impresion-3d',
   },
 

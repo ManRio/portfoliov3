@@ -15,7 +15,10 @@ import ProjectStockIt from './pages/ProjectStockIt';
 import ProjectOroManager from './pages/ProjectOroManager';
 import ProjectFitTrack from './pages/ProjectFitTrack';
 import ProjectTaskGamification from './pages/ProjectTaskGamification';
+import ProjectPn3D from './pages/ProjectPn3D';
+
 import CanonicalManager from './components/CanonicalManager';
+import ScrollManager from './components/ScrollManager';
 
 function App() {
   return (
@@ -34,6 +37,7 @@ function App() {
         <div className='relative z-10 min-h-screen'>
           <Router>
             <CanonicalManager />
+            <ScrollManager />
             <Navbar />
             <Routes>
               <Route
@@ -68,6 +72,10 @@ function App() {
               <Route
                 path='/projects/ProjectTaskGamification'
                 element={<ProjectTaskGamification />}
+              />
+              <Route
+                path='/projects/pn-impresion-3d'
+                element={<ProjectPn3D />}
               />
             </Routes>
             <Footer />

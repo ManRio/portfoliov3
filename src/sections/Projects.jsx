@@ -12,6 +12,7 @@ import './projects-v4.css';
 // Rutas de casos prácticos que ya existen.
 // Las nuevas se añadirán cuando estén construidas.
 const availableCaseStudies = new Set([
+  '/projects/pn-impresion-3d',
   '/projects/stockit',
   '/projects/ProjectOroManager',
   '/projects/ProjectTaskGamification',
