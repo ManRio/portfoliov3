@@ -1,13 +1,11 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { SiAngular, SiTypescript } from 'react-icons/si';
 import fitTrackLanding from '/assets/FitTrack-Landing.png';
 import habitsFitTrack from '/assets/habits-FitTrack.png';
 import ProfileFitTrack from '/assets/Profile-FitTrack.png';
-import { useCanonical } from '../hooks/useCanonical';
 
 function ProjectFitTrack() {
-  useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   const navigate = useNavigate();
 
   return (
@@ -88,3 +86,4 @@ function ProjectFitTrack() {
 }
 
 export default ProjectFitTrack;
+

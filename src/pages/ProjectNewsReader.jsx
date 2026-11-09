@@ -1,14 +1,12 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { SiMongodb, SiNextdotjs, SiTailwindcss, SiReact } from 'react-icons/si';
 import Landing from '/assets/newsreaderlandingpage.png';
 import Feed from '/assets/NewsReaderFeed.png';
 import Interests from '/assets/NewsReaderInterests.png';
 import Profile from '/assets/NewsReaderProfile.png';
-import { useCanonical } from '../hooks/useCanonical';
 
 function ProjectNewsReader() {
-  useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   const navigate = useNavigate();
 
   return (
@@ -85,3 +83,4 @@ function ProjectNewsReader() {
 }
 
 export default ProjectNewsReader;
+

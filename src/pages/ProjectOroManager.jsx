@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 import macbookChat from '/assets/OroManager.png';
@@ -23,10 +23,8 @@ import {
   SiNodedotjs,
   SiNginx,
 } from 'react-icons/si';
-import { useCanonical } from '../hooks/useCanonical';
 
 function ProjectOroManager() {
-  useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   const navigate = useNavigate();
 
   return (
@@ -109,3 +107,4 @@ function ProjectOroManager() {
 }
 
 export default ProjectOroManager;
+

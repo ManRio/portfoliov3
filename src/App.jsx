@@ -15,10 +15,9 @@ import ProjectStockIt from './pages/ProjectStockIt';
 import ProjectOroManager from './pages/ProjectOroManager';
 import ProjectFitTrack from './pages/ProjectFitTrack';
 import ProjectTaskGamification from './pages/ProjectTaskGamification';
-import { useCanonical } from './hooks/useCanonical';
+import CanonicalManager from './components/CanonicalManager';
 
 function App() {
-  useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   return (
     <>
       <div className='relative text-white'>
@@ -34,6 +33,7 @@ function App() {
         {/* Capa semitransparente encima del fondo */}
         <div className='relative z-10 min-h-screen'>
           <Router>
+            <CanonicalManager />
             <Navbar />
             <Routes>
               <Route

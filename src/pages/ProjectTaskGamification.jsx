@@ -1,14 +1,12 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { SiPython, SiFlask, SiVuedotjs } from 'react-icons/si';
 import landingTask from '/assets/landing_task_gamification.png';
 import dashboardProfesor from '/assets/dashboard_profesor_task_gamiffication.png';
 import dashboardAlumno from '/assets/dashboard_alumno.png';
 import tareasTask from '/assets/tareas_task_gamification.png';
-import { useCanonical } from '../hooks/useCanonical';
 
 function ProjectTaskGamification() {
-  useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   const navigate = useNavigate();
 
   return (
@@ -98,3 +96,4 @@ function ProjectTaskGamification() {
 }
 
 export default ProjectTaskGamification;
+

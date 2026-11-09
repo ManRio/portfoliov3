@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 import landingStockit from '/assets/landingStockit.png';
@@ -20,10 +20,8 @@ import {
   SiMysql,
   SiJsonwebtokens,
 } from 'react-icons/si';
-import { useCanonical } from '../hooks/useCanonical';
 
 function ProjectStockIt() {
-    useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   const navigate = useNavigate();
 
   return (
@@ -112,3 +110,4 @@ function ProjectStockIt() {
 }
 
 export default ProjectStockIt;
+

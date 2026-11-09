@@ -1,12 +1,10 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { FaHtml5, FaCss3Alt, FaJsSquare } from 'react-icons/fa';
 import LandingMobile from '/assets/LandingMobile.png';
 import LandingPC from '/assets/LandingPC.png';
-import { useCanonical } from '../hooks/useCanonical';
 
 function ProjectLanding() {
-    useCanonical('https://portfoliov3-omega-nine.vercel.app/projects');
   const navigate = useNavigate();
 
   return (
@@ -85,3 +83,4 @@ function ProjectLanding() {
 }
 
 export default ProjectLanding;
+
