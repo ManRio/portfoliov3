@@ -54,8 +54,8 @@ function Hero() {
           </motion.h1>
 
           <motion.p {...fadeUp(0.35)} className='hero-v4-description'>
-            Desarrollador Web Full Stack especializado en React, Next.js
-            y TypeScript.
+            Desarrollador Web Full Stack especializado en React, Next.js y
+            TypeScript.
             <br />
             <br />
             Construyo interfaces, APIs y soluciones digitales para negocios,
@@ -68,13 +68,8 @@ function Hero() {
               <span aria-hidden='true'>↗</span>
             </a>
 
-            <a
-              href='/Manuel_Rios_CV_Nov25.pdf'
-              download
-              className='hero-v4-btn-secondary'
-            >
+            <a href='/Manuel_Rios_CV.pdf' download='Manuel_Rios_CV.pdf'>
               Descargar CV
-              <span aria-hidden='true'>↓</span>
             </a>
           </motion.div>
 

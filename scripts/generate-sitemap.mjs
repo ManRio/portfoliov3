@@ -1,4 +1,3 @@
-
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { Readable } from 'node:stream';
 import fs from 'node:fs/promises';
@@ -14,6 +13,7 @@ const routes = [
   '/projects/ProjectFitTrack',
   '/projects/ProjectNewsReader',
   '/projects/landingpageresponsive',
+  '/projects/pn-impresion-3d',
 ];
 
 const links = routes.map((url) => ({
@@ -27,17 +27,13 @@ const sitemapStream = new SitemapStream({
 });
 
 const xml = await streamToPromise(
-  Readable.from(links).pipe(sitemapStream)
+  Readable.from(links).pipe(sitemapStream),
 ).then((buffer) => buffer.toString());
 
 await fs.mkdir(resolve('dist'), {
   recursive: true,
 });
 
-await fs.writeFile(
-  resolve('dist', 'sitemap.xml'),
-  xml,
-  'utf8'
-);
+await fs.writeFile(resolve('dist', 'sitemap.xml'), xml, 'utf8');
 
 console.log('✅ sitemap.xml generado para manrio.dev');

@@ -48,7 +48,7 @@ function CaseStudyGallery({ images }) {
               aria-label={`Ampliar ${image.title}`}
             >
               <img
-                src={image.src}
+                src={image.thumbnail || image.src}
                 alt={image.alt}
                 loading='lazy'
                 decoding='async'

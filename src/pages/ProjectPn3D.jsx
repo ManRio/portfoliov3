@@ -72,6 +72,7 @@ const features = [
 const gallery = [
   {
     src: `${ASSETS}/catalogo.png`,
+    thumbnail: `${ASSETS}/thumbs/catalogo.webp`,
     title: 'Catálogo de productos',
     description:
       'Exploración del catálogo mediante categorías y tarjetas de producto.',
@@ -79,6 +80,7 @@ const gallery = [
   },
   {
     src: `${ASSETS}/ficha-producto.png`,
+    thumbnail: `${ASSETS}/thumbs/ficha-producto.webp`,
     title: 'Ficha individual de producto',
     description:
       'Galería de imágenes, información del producto y presentación de sus características.',
@@ -86,6 +88,7 @@ const gallery = [
   },
   {
     src: `${ASSETS}/carrito.png`,
+    thumbnail: `${ASSETS}/thumbs/carrito.webp`,
     title: 'Carrito y proceso de compra',
     description:
       'Resumen del pedido, opciones de entrega, notas y condiciones de compra.',
@@ -93,6 +96,7 @@ const gallery = [
   },
   {
     src: `${ASSETS}/panel-admin.png`,
+    thumbnail: `${ASSETS}/thumbs/panel-admin.webp`,
     title: 'Panel de administración',
     description:
       'Herramientas internas para gestionar el catálogo y las operaciones de la tienda.',
