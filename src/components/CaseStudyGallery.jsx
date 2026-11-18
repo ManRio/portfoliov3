@@ -3,32 +3,38 @@ import { Maximize2, X, Images } from 'lucide-react';
 
 import './case-study-gallery.css';
 
-function CaseStudyGallery({ images }) {
+function CaseStudyGallery({
+  images = [],
+  sectionLabel = '05 / EL PRODUCTO',
+  title = 'La aplicación por dentro.',
+  description = 'Un recorrido visual por las principales funcionalidades del proyecto.',
+}) {
   const dialogRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const openImage = (image) => {
     setSelectedImage(image);
-    dialogRef.current?.showModal();
+
+    if (!dialogRef.current?.open) {
+      dialogRef.current?.showModal();
+    }
   };
 
   const closeImage = () => {
     dialogRef.current?.close();
+    setSelectedImage(null);
   };
 
   return (
     <section className='cs-gallery-section' aria-labelledby='cs-gallery-title'>
       <div className='cs-gallery-heading'>
-        <span className='case-study-section-label'>05 / EL PRODUCTO</span>
+        <span className='case-study-section-label'>{sectionLabel}</span>
 
         <div className='cs-gallery-heading-main'>
           <div>
-            <h2 id='cs-gallery-title'>La aplicación por dentro.</h2>
+            <h2 id='cs-gallery-title'>{title}</h2>
 
-            <p>
-              Un recorrido visual por las principales funcionalidades del
-              proyecto.
-            </p>
+            <p>{description}</p>
           </div>
 
           <span className='cs-gallery-count'>
@@ -83,6 +89,7 @@ function CaseStudyGallery({ images }) {
             closeImage();
           }
         }}
+        onClose={() => setSelectedImage(null)}
       >
         {selectedImage && (
           <div className='cs-gallery-modal-inner'>

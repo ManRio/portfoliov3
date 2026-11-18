@@ -151,7 +151,7 @@ export const projects = [
     subtitle: 'Herramienta de procesamiento de PDF',
     category: 'Proyecto propio',
     featured: false,
-    order: 6,
+    order: 5,
     status: 'Publicado',
 
     description:
@@ -177,7 +177,7 @@ export const projects = [
 
     repositoryUrl: 'https://github.com/ManRio/intercarlar-pdf',
 
-    caseStudyUrl: null,
+    caseStudyUrl: '/projects/intercala-pdf',
   },
 
   {
