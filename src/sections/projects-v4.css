@@ -501,3 +501,11 @@
   object-fit: cover;
   object-position: center;
 }
+/* Captura real de IntercalaPDF */
+.projects-v4-visual-intercala-pdf img {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: cover;
+  object-position: center top;
+}

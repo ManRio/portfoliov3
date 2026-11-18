@@ -145,6 +145,42 @@ export const projects = [
   },
 
   {
+    id: 'intercala-pdf',
+    slug: 'intercala-pdf',
+    title: 'IntercalaPDF',
+    subtitle: 'Herramienta de procesamiento de PDF',
+    category: 'Proyecto propio',
+    featured: false,
+    order: 6,
+    status: 'Publicado',
+
+    description:
+      'Aplicación web que intercala dos documentos PDF ' +
+      'página a página, con opción de invertir el orden ' +
+      'del segundo archivo. Surgió de la necesidad ' +
+      'de reconstruir escaneos a doble cara realizados ' +
+      'con un escáner de una sola cara.',
+
+    technologies: ['JavaScript', 'HTML5', 'CSS3', 'pdf-lib'],
+
+    highlights: [
+      'Intercalado de dos documentos PDF',
+      'Orden normal o inverso del segundo archivo',
+      'Vista previa de la secuencia de páginas',
+      'Procesamiento local sin subir documentos al servidor',
+      'Descarga del PDF resultante',
+    ],
+
+    image: '/assets/projects/intercala-pdf/portada.webp',
+
+    demoUrl: 'https://intercarlar-pdf.vercel.app/',
+
+    repositoryUrl: 'https://github.com/ManRio/intercarlar-pdf',
+
+    caseStudyUrl: null,
+  },
+
+  {
     id: 'task-gamification',
     slug: 'task-gamification',
     title: 'Task Gamification',
