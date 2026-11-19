@@ -109,7 +109,7 @@ export const projects = [
       'Integración frontend y API REST',
     ],
 
-    image: '/assets/LogoStockIt.png',
+    image: '/assets/projects/stockit/portada.webp',
     demoUrl: null,
     repositoryUrl: 'https://github.com/ManRio/StockIt',
     caseStudyUrl: '/projects/stockit',
