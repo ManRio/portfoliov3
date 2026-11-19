@@ -28,7 +28,7 @@ function App() {
     <div className='relative text-white'>
       <div className='fixed top-0 left-0 w-full h-full z-0 overflow-hidden'>
         <img
-          src='/assets/bg-tech.png'
+          src='/assets/bg-tech.webp'
           alt=''
           aria-hidden='true'
           className='w-full h-full object-cover opacity-10'

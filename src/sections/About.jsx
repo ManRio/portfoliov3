@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import TechStack from '../components/TechStack';
-import foto from '/assets/foto2.png';
+import foto from '/assets/foto2.webp';
 import './about.css';
 
 const strengths = [
