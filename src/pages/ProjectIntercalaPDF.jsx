@@ -55,6 +55,7 @@ const features = [
 const gallery = [
   {
     src: `${ASSETS}/orden-normal.webp`,
+    thumbnail: `${ASSETS}/thumbs/orden-normal.webp`,
     title: 'Intercalado en orden normal',
     description:
       'Dos documentos de dos páginas combinados en un PDF final de cuatro páginas.',
@@ -62,6 +63,7 @@ const gallery = [
   },
   {
     src: `${ASSETS}/orden-inverso.webp`,
+    thumbnail: `${ASSETS}/thumbs/orden-inverso.webp`,
     title: 'Intercalado en orden inverso',
     description:
       'Documentos de cuatro y tres páginas combinados invirtiendo el orden del segundo.',
