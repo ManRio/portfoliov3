@@ -130,7 +130,14 @@ export const projects = [
       'en cuyo desarrollo participé durante mis prácticas ' +
       'profesionales en Grupo Oro.',
 
-    technologies: ['React', 'TypeScript', 'Firebase', 'n8n'],
+    technologies: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'Firebase',
+      'n8n',
+    ],
 
     highlights: [
       'Interfaces de gestión interna',
@@ -138,7 +145,7 @@ export const projects = [
       'Automatización de procesos',
     ],
 
-    image: '/assets/OroManager.png',
+    image: '/assets/projects/oro-manager/portada.webp',
     demoUrl: null,
     repositoryUrl: 'https://github.com/ManRio/OroManager',
     caseStudyUrl: '/projects/ProjectOroManager',
@@ -187,7 +194,7 @@ export const projects = [
     subtitle: 'Gamificación educativa',
     category: 'Proyecto propio',
     featured: false,
-    order: 5,
+    order: 6,
     status: 'Proyecto en evolución',
 
     description:
@@ -195,7 +202,7 @@ export const projects = [
       'de tareas, recompensas y seguimiento de alumnos ' +
       'y profesores.',
 
-    technologies: ['Vue.js', 'Python', 'Flask', 'SQLite', 'JWT'],
+    technologies: ['Vue.js', 'Python', 'Flask', 'SQLAlchemy', 'SQLite', 'JWT'],
 
     highlights: [
       'Gestión de tareas y recompensas',
@@ -203,7 +210,7 @@ export const projects = [
       'Autenticación con JWT',
     ],
 
-    image: '/assets/landing_task_gamification.png',
+    image: '/assets/projects/task-gamification/portada.webp',
     demoUrl: null,
     repositoryUrl: 'https://github.com/ManRio/task_gamification',
     caseStudyUrl: '/projects/ProjectTaskGamification',
