@@ -1,3 +1,5 @@
+import { lazy, Suspense } from 'react';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,16 +18,59 @@ import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 
-import ProjectPn3D from './pages/ProjectPn3D';
-import ProjectVerifactu from './pages/ProjectVerifactu';
-import ProjectStockIt from './pages/ProjectStockIt';
-import ProjectOroManager from './pages/ProjectOroManager';
-import ProjectIntercalaPDF from './pages/ProjectIntercalaPDF';
-import ProjectTaskGamification from './pages/ProjectTaskGamification';
+// Los casos prácticos se cargarán únicamente
+// cuando el usuario visite su ruta.
+const ProjectPn3D = lazy(() => import('./pages/ProjectPn3D'));
+
+const ProjectVerifactu = lazy(() => import('./pages/ProjectVerifactu'));
+
+const ProjectStockIt = lazy(() => import('./pages/ProjectStockIt'));
+
+const ProjectOroManager = lazy(() => import('./pages/ProjectOroManager'));
+
+const ProjectIntercalaPDF = lazy(() => import('./pages/ProjectIntercalaPDF'));
+
+const ProjectTaskGamification = lazy(
+  () => import('./pages/ProjectTaskGamification'),
+);
+
+// Indicador accesible mientras se descarga
+// el código de un caso práctico.
+function ProjectLoading() {
+  return (
+    <main
+      role='status'
+      aria-live='polite'
+      className='min-h-[60vh] flex items-center justify-center px-6 py-24'
+    >
+      <div className='flex flex-col items-center gap-4 text-center'>
+        <div
+          className='h-10 w-10 rounded-full border-2 border-cyan-400/20 border-t-cyan-400 animate-spin'
+          aria-hidden='true'
+        />
+
+        <p className='text-sm text-slate-300'>Cargando proyecto...</p>
+      </div>
+    </main>
+  );
+}
+
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
+    </>
+  );
+}
 
 function App() {
   return (
     <div className='relative text-white'>
+      {/* Fondo general optimizado */}
       <div className='fixed top-0 left-0 w-full h-full z-0 overflow-hidden'>
         <img
           src='/assets/bg-tech.webp'
@@ -41,65 +86,59 @@ function App() {
           <ScrollManager />
           <Navbar />
 
-          <Routes>
-            {/* Página principal */}
-            <Route
-              path='/'
-              element={
-                <>
-                  <Hero />
-                  <About />
-                  <Experience />
-                  <Projects />
-                  <Contact />
-                </>
-              }
-            />
+          <Suspense fallback={<ProjectLoading />}>
+            <Routes>
+              {/* Página principal */}
+              <Route path='/' element={<HomePage />} />
 
-            {/* Los seis casos prácticos V4 */}
-            <Route path='/projects/pn-impresion-3d' element={<ProjectPn3D />} />
+              {/* Casos prácticos V4 */}
+              <Route
+                path='/projects/pn-impresion-3d'
+                element={<ProjectPn3D />}
+              />
 
-            <Route
-              path='/projects/verifactu-app'
-              element={<ProjectVerifactu />}
-            />
+              <Route
+                path='/projects/verifactu-app'
+                element={<ProjectVerifactu />}
+              />
 
-            <Route path='/projects/stockit' element={<ProjectStockIt />} />
+              <Route path='/projects/stockit' element={<ProjectStockIt />} />
 
-            <Route
-              path='/projects/ProjectOroManager'
-              element={<ProjectOroManager />}
-            />
+              <Route
+                path='/projects/ProjectOroManager'
+                element={<ProjectOroManager />}
+              />
 
-            <Route
-              path='/projects/intercala-pdf'
-              element={<ProjectIntercalaPDF />}
-            />
+              <Route
+                path='/projects/intercala-pdf'
+                element={<ProjectIntercalaPDF />}
+              />
 
-            <Route
-              path='/projects/ProjectTaskGamification'
-              element={<ProjectTaskGamification />}
-            />
+              <Route
+                path='/projects/ProjectTaskGamification'
+                element={<ProjectTaskGamification />}
+              />
 
-            {/* Enlaces históricos */}
-            <Route
-              path='/projects/ProjectFitTrack'
-              element={<Navigate to='/#projects' replace />}
-            />
+              {/* Redirecciones de proyectos antiguos */}
+              <Route
+                path='/projects/ProjectFitTrack'
+                element={<Navigate to='/#projects' replace />}
+              />
 
-            <Route
-              path='/projects/ProjectNewsReader'
-              element={<Navigate to='/#projects' replace />}
-            />
+              <Route
+                path='/projects/ProjectNewsReader'
+                element={<Navigate to='/#projects' replace />}
+              />
 
-            <Route
-              path='/projects/landingpageresponsive'
-              element={<Navigate to='/#projects' replace />}
-            />
+              <Route
+                path='/projects/landingpageresponsive'
+                element={<Navigate to='/#projects' replace />}
+              />
 
-            {/* Otras direcciones desconocidas */}
-            <Route path='*' element={<Navigate to='/' replace />} />
-          </Routes>
+              {/* Otras rutas */}
+              <Route path='*' element={<Navigate to='/' replace />} />
+            </Routes>
+          </Suspense>
 
           <Footer />
         </Router>
