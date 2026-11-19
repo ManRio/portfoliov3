@@ -8,14 +8,11 @@ const SITE_URL = 'https://manrio.dev';
 const routes = [
   '/',
   '/projects/pn-impresion-3d',
-  '/projects/intercala-pdf',
   '/projects/verifactu-app',
   '/projects/stockit',
   '/projects/ProjectOroManager',
+  '/projects/intercala-pdf',
   '/projects/ProjectTaskGamification',
-  '/projects/ProjectFitTrack',
-  '/projects/ProjectNewsReader',
-  '/projects/landingpageresponsive',
 ];
 
 const links = routes.map((url) => ({

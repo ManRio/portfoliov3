@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -11,21 +16,16 @@ import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 
-import ProjectLanding from './pages/ProjectLanding';
-import ProjectNewsReader from './pages/ProjectNewsReader';
+import ProjectPn3D from './pages/ProjectPn3D';
+import ProjectVerifactu from './pages/ProjectVerifactu';
 import ProjectStockIt from './pages/ProjectStockIt';
 import ProjectOroManager from './pages/ProjectOroManager';
-import ProjectFitTrack from './pages/ProjectFitTrack';
-import ProjectTaskGamification from './pages/ProjectTaskGamification';
-
-import ProjectPn3D from './pages/ProjectPn3D';
 import ProjectIntercalaPDF from './pages/ProjectIntercalaPDF';
-import ProjectVerifactu from './pages/ProjectVerifactu';
+import ProjectTaskGamification from './pages/ProjectTaskGamification';
 
 function App() {
   return (
     <div className='relative text-white'>
-      {/* Fondo decorativo */}
       <div className='fixed top-0 left-0 w-full h-full z-0 overflow-hidden'>
         <img
           src='/assets/bg-tech.png'
@@ -42,7 +42,7 @@ function App() {
           <Navbar />
 
           <Routes>
-            {/* Portada */}
+            {/* Página principal */}
             <Route
               path='/'
               element={
@@ -56,15 +56,14 @@ function App() {
               }
             />
 
-            {/* Casos prácticos V4 */}
+            {/* Los seis casos prácticos V4 */}
             <Route path='/projects/pn-impresion-3d' element={<ProjectPn3D />} />
 
             <Route
-              path='/projects/intercala-pdf'
-              element={<ProjectIntercalaPDF />}
+              path='/projects/verifactu-app'
+              element={<ProjectVerifactu />}
             />
 
-            {/* Casos prácticos anteriores */}
             <Route path='/projects/stockit' element={<ProjectStockIt />} />
 
             <Route
@@ -73,29 +72,33 @@ function App() {
             />
 
             <Route
+              path='/projects/intercala-pdf'
+              element={<ProjectIntercalaPDF />}
+            />
+
+            <Route
               path='/projects/ProjectTaskGamification'
               element={<ProjectTaskGamification />}
             />
 
+            {/* Enlaces históricos */}
             <Route
               path='/projects/ProjectFitTrack'
-              element={<ProjectFitTrack />}
+              element={<Navigate to='/#projects' replace />}
             />
 
             <Route
               path='/projects/ProjectNewsReader'
-              element={<ProjectNewsReader />}
+              element={<Navigate to='/#projects' replace />}
             />
 
             <Route
               path='/projects/landingpageresponsive'
-              element={<ProjectLanding />}
+              element={<Navigate to='/#projects' replace />}
             />
 
-            <Route
-              path='/projects/verifactu-app'
-              element={<ProjectVerifactu />}
-            />
+            {/* Otras direcciones desconocidas */}
+            <Route path='*' element={<Navigate to='/' replace />} />
           </Routes>
 
           <Footer />
