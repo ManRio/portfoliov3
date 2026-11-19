@@ -20,6 +20,7 @@ import ProjectTaskGamification from './pages/ProjectTaskGamification';
 
 import ProjectPn3D from './pages/ProjectPn3D';
 import ProjectIntercalaPDF from './pages/ProjectIntercalaPDF';
+import ProjectVerifactu from './pages/ProjectVerifactu';
 
 function App() {
   return (
@@ -89,6 +90,11 @@ function App() {
             <Route
               path='/projects/landingpageresponsive'
               element={<ProjectLanding />}
+            />
+
+            <Route
+              path='/projects/verifactu-app'
+              element={<ProjectVerifactu />}
             />
           </Routes>
 

@@ -14,6 +14,7 @@ import './projects-v4.css';
 const availableCaseStudies = new Set([
   '/projects/pn-impresion-3d',
   '/projects/intercala-pdf',
+  '/projects/verifactu-app',
   '/projects/stockit',
   '/projects/ProjectOroManager',
   '/projects/ProjectTaskGamification',

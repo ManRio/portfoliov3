@@ -9,6 +9,7 @@ const routes = [
   '/',
   '/projects/pn-impresion-3d',
   '/projects/intercala-pdf',
+  '/projects/verifactu-app',
   '/projects/stockit',
   '/projects/ProjectOroManager',
   '/projects/ProjectTaskGamification',

@@ -79,7 +79,7 @@ export const projects = [
       'Pruebas automatizadas',
     ],
 
-    image: null,
+    image: '/assets/projects/verifactu-app/productos.webp',
     demoUrl: null,
     repositoryUrl: 'https://github.com/ManRio/verifactu-app',
     caseStudyUrl: '/projects/verifactu-app',
