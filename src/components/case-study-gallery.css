@@ -1,0 +1,267 @@
+
+/* =========================================
+   CASE STUDY GALLERY V4
+========================================= */
+
+.cs-gallery-section {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.cs-gallery-heading {
+  margin-bottom: 2rem;
+}
+
+.cs-gallery-heading-main {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.cs-gallery-heading h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  margin-bottom: 0.75rem;
+}
+
+.cs-gallery-heading-main p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.cs-gallery-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+/* GRID */
+
+.cs-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.cs-gallery-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #111b2c;
+  border: 1px solid rgba(148, 163, 184, 0.17);
+  border-radius: 15px;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.cs-gallery-card:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  transform: translateY(-3px);
+}
+
+/* MINIATURAS */
+
+.cs-gallery-preview {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  padding: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+  background: #090e17;
+  border: none;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.cs-gallery-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 250ms ease;
+}
+
+.cs-gallery-preview:hover img {
+  transform: scale(1.035);
+}
+
+.cs-gallery-expand {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  color: #f8fafc;
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: rgba(8, 13, 24, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 8px;
+}
+
+/* DESCRIPCIÓN */
+
+.cs-gallery-card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.3rem;
+}
+
+.cs-gallery-number {
+  color: #22d3ee;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding-top: 0.2rem;
+}
+
+.cs-gallery-card-content h3 {
+  color: #f8fafc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 0.45rem;
+}
+
+.cs-gallery-card-content p {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+/* MODAL */
+
+.cs-gallery-modal {
+  position: fixed;
+  inset: 0;
+  width: min(1180px, calc(100vw - 2rem));
+  max-width: none;
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+  color: #f8fafc;
+  background: #0c1422;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.cs-gallery-modal::backdrop {
+  background: rgba(2, 6, 15, 0.88);
+  backdrop-filter: blur(8px);
+}
+
+.cs-gallery-modal-inner {
+  padding: 1.2rem;
+}
+
+.cs-gallery-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.15rem;
+}
+
+.cs-gallery-modal-header h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.cs-gallery-modal-header p {
+  color: #94a3b8;
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.cs-gallery-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  color: #f8fafc;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.cs-gallery-close:hover {
+  background: #334155;
+}
+
+.cs-gallery-modal-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.cs-gallery-preview:focus-visible,
+.cs-gallery-close:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 3px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .cs-gallery-section {
+    padding: 3.5rem 0;
+  }
+
+  .cs-gallery-heading-main {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cs-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-gallery-card-content {
+    padding: 1.1rem;
+  }
+
+  .cs-gallery-modal {
+    width: calc(100vw - 1rem);
+    max-height: calc(100dvh - 1rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-gallery-card,
+  .cs-gallery-preview img {
+    transition: none;
+  }
+
+  .cs-gallery-card:hover {
+    transform: none;
+  }
+
+  .cs-gallery-preview:hover img {
+    transform: none;
+  }
+}

@@ -7,19 +7,18 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/generate-robots.mjs",
+    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/generate-robots.mjs && node scripts/generate-seo-pages.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "framer-motion": "^12.10.2",
+    "lucide-react": "^1.70.0",
     "motion": "^12.23.12",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.5.3",
-    "react-scroll": "^1.9.3",
-    "swiper": "^11.2.10"
+    "react-router-dom": "^7.5.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
@@ -33,6 +32,7 @@
     "globals": "^16.0.0",
     "next-sitemap": "^4.2.3",
     "postcss": "^8.4.21",
+    "sharp": "^0.35.5",
     "sitemap": "^9.0.0",
     "tailwindcss": "^3.3.5",
     "vite": "^6.3.5"

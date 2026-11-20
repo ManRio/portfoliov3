@@ -1,38 +1,534 @@
-/* Glow animado del título */
-.hero-title {
-  text-shadow: 0 0 10px rgba(34, 211, 238, 0.7),
-               0 0 20px rgba(34, 211, 238, 0.6),
-               0 0 40px rgba(34, 211, 238, 0.5);
-  animation: hero-glow 3s infinite ease-in-out;
+/* =========================================
+   PORTFOLIO V4 - HERO
+========================================= */
+
+.hero-v4 {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 8rem 1.5rem 5rem;
+
+  background:
+    radial-gradient(
+      ellipse at 78% 35%,
+      rgba(34, 211, 238, 0.09),
+      transparent 48%
+    ),
+    linear-gradient(135deg, #0b1120 0%, #080d18 100%);
 }
 
-@keyframes hero-glow {
-  0% {
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.6),
-                 0 0 20px rgba(34, 211, 238, 0.5),
-                 0 0 40px rgba(34, 211, 238, 0.4);
+.hero-v4-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 5rem);
+}
+
+/* PRESENTACIÓN */
+
+.hero-v4-content {
+  min-width: 0;
+}
+
+.hero-v4-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(74, 222, 128, 0.22);
+  border-radius: 999px;
+
+  background: rgba(74, 222, 128, 0.06);
+  color: #bbf7d0;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.hero-v4-status-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+}
+
+.hero-v4-intro {
+  color: #cbd5e1;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: 1.25rem;
+}
+
+.hero-v4-intro strong {
+  color: #fff;
+}
+
+.hero-v4-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.4rem, 4.2vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+  color: #f8fafc;
+  margin: 0 0 1.75rem;
+}
+
+.hero-v4-title span {
+  color: #22d3ee;
+}
+
+.hero-v4-description {
+  max-width: 580px;
+  color: #aebed1;
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+  line-height: 1.85;
+}
+
+/* BOTONES */
+
+.hero-v4-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.hero-v4-btn-primary,
+.hero-v4-btn-secondary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+
+  min-height: 48px;
+  padding: 0.85rem 1.35rem;
+  border-radius: 10px;
+
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.hero-v4-btn-primary {
+  background: #22d3ee;
+  color: #07111f;
+  border: 1px solid #22d3ee;
+}
+
+.hero-v4-btn-primary:hover {
+  background: #67e8f9;
+  transform: translateY(-2px);
+}
+
+.hero-v4-btn-secondary {
+  color: #e2e8f0;
+  border: 1px solid #334155;
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.hero-v4-btn-secondary:hover {
+  background: #1e293b;
+  border-color: #64748b;
+  transform: translateY(-2px);
+}
+
+.hero-v4 a:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 4px;
+}
+
+/* PIE DE LA PRESENTACIÓN */
+
+.hero-v4-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.5rem;
+
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.hero-v4-footer a {
+  color: #67e8f9;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-v4-footer a:hover {
+  text-decoration: underline;
+}
+
+/* PANEL DE PROYECTOS */
+
+.hero-v4-showcase {
+  min-width: 0;
+  overflow: hidden;
+
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 20px;
+
+  background: linear-gradient(
+    160deg,
+    rgba(30, 41, 59, 0.95),
+    rgba(15, 23, 42, 0.95)
+  );
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.28),
+    0 0 50px rgba(34, 211, 238, 0.04);
+}
+
+.hero-v4-showcase-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.hero-v4-window-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.hero-v4-window-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #475569;
+}
+
+.hero-v4-window-dots span:first-child {
+  background: #fb7185;
+}
+
+.hero-v4-window-dots span:nth-child(2) {
+  background: #fbbf24;
+}
+
+.hero-v4-window-dots span:nth-child(3) {
+  background: #4ade80;
+}
+
+.hero-v4-showcase-body {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.hero-v4-showcase-heading > span {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #22d3ee;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.hero-v4-showcase-heading h2 {
+  color: #f8fafc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.3rem, 2.1vw, 1.8rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.hero-v4-showcase-heading p {
+  color: #94a3b8;
+  font-size: 0.83rem;
+  line-height: 1.7;
+}
+
+.hero-v4-project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.hero-v4-project {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+
+  padding: 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 12px;
+
+  background: rgba(15, 23, 42, 0.75);
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.hero-v4-project:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(34, 211, 238, 0.4);
+}
+
+.hero-v4-project-number {
+  flex-shrink: 0;
+  color: #22d3ee;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.hero-v4-project-info {
+  min-width: 0;
+}
+
+.hero-v4-project-info h3 {
+  margin-bottom: 0.3rem;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.hero-v4-project-info p {
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  margin-bottom: 0.7rem;
+}
+
+.hero-v4-project-info > span {
+  color: #67e8f9;
+  font-size: 0.68rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.hero-v4-showcase-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+
+  color: #94a3b8;
+  font-size: 0.72rem;
+}
+
+.hero-v4-code-symbol {
+  color: #22d3ee;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 960px) {
+  .hero-v4-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
   }
-  50% {
-    text-shadow: 0 0 15px rgba(34, 211, 238, 0.9),
-                 0 0 30px rgba(34, 211, 238, 0.7),
-                 0 0 60px rgba(34, 211, 238, 0.6);
+
+  .hero-v4-content {
+    max-width: 720px;
   }
-  100% {
-    text-shadow: 0 0 10px rgba(34, 211, 238, 0.6),
-                 0 0 20px rgba(34, 211, 238, 0.5),
-                 0 0 40px rgba(34, 211, 238, 0.4);
+
+  .hero-v4-showcase {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .hero-v4-title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
   }
 }
 
-/* Pulso más lento */
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 0.6;
+@media (max-width: 600px) {
+  .hero-v4 {
+    padding: 7rem 1.25rem 3.5rem;
   }
-  50% {
-    opacity: 1;
+
+  .hero-v4-title {
+    font-size: clamp(2.15rem, 8.5vw, 3rem);
+  }
+
+  .hero-v4-status {
+    font-size: 0.68rem;
+  }
+
+  .hero-v4-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-v4-btn-primary,
+  .hero-v4-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-v4-showcase-header {
+    font-size: 0.6rem;
   }
 }
-.animate-pulse-slow {
-  animation: pulse-slow 6s infinite ease-in-out;
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-v4 *,
+  .hero-v4 *::before,
+  .hero-v4 *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================
+   HERO V4 - COLUMNAS DE IGUAL ALTURA
+========================================= */
+
+@media (min-width: 961px) {
+  .hero-v4 {
+    min-height: 100svh;
+    height: auto;
+    padding: 6rem 1.5rem 1.5rem;
+    overflow: visible;
+  }
+
+  .hero-v4-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: stretch;
+    gap: 3rem;
+  }
+
+  /* Columna izquierda */
+  .hero-v4-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .hero-v4-footer {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
+
+  /* Columna derecha */
+  .hero-v4-showcase {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .hero-v4-showcase-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .hero-v4-showcase-bottom {
+    margin-top: auto;
+  }
+}
+
+/* =========================================
+   ESCRITORIOS DE POCA ALTURA
+========================================= */
+
+@media (min-width: 961px) and (max-height: 850px) {
+  .hero-v4 {
+    padding-top: 5.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .hero-v4-status {
+    margin-bottom: 0.9rem;
+  }
+
+  .hero-v4-intro {
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-v4-title {
+    font-size: clamp(2.2rem, 3vw, 3.2rem);
+    line-height: 1.08;
+    margin-bottom: 1rem;
+  }
+
+  .hero-v4-description {
+    line-height: 1.55;
+  }
+
+  .hero-v4-actions {
+    margin-top: 1.25rem;
+  }
+
+  .hero-v4-footer {
+    padding-top: 0.75rem;
+  }
+
+  .hero-v4-showcase-body {
+    padding: 1.25rem;
+  }
+
+  .hero-v4-project-list {
+    margin-top: 1.1rem;
+    gap: 0.55rem;
+  }
+
+  .hero-v4-project {
+    padding: 0.85rem 1rem;
+  }
+
+  .hero-v4-showcase-bottom {
+    padding-top: 0.85rem;
+  }
+}
+
+/* =========================================
+   HERO V4 - AJUSTES FINALES
+========================================= */
+
+@media (min-width: 961px) {
+  /* El indicador ya no ocupa todo el ancho */
+  .hero-v4-status {
+    align-self: flex-start;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  /* Separación entre los botones y el pie */
+  .hero-v4-actions {
+    margin-bottom: 1.25rem;
+  }
+
+  /* Pie alineado con la parte inferior */
+  .hero-v4-footer {
+    margin-top: auto;
+    padding-top: 1rem;
+  }
 }

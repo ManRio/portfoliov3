@@ -1,0 +1,260 @@
+/* =========================================
+   PORTFOLIO V4 - FOOTER
+========================================= */
+
+.footer-v4 {
+  position: relative;
+  background: #080d18;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  color: #f8fafc;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+.footer-v4-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 1.75rem;
+}
+
+/* =========================================
+   ESTRUCTURA
+========================================= */
+
+.footer-v4-main {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) 1fr 1.2fr auto;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+  padding-bottom: 4rem;
+}
+
+/* =========================================
+   MARCA
+========================================= */
+
+.footer-v4-brand {
+  max-width: 370px;
+}
+
+.footer-v4-logo {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+  color: #f8fafc;
+  text-decoration: none;
+}
+
+.footer-v4-logo span {
+  color: #22d3ee;
+}
+
+.footer-v4-role {
+  margin-top: 0.9rem;
+  color: #e2e8f0;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.footer-v4-description {
+  margin-top: 1.2rem;
+  max-width: 340px;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  line-height: 1.85;
+}
+
+.footer-v4-location {
+  display: block;
+  margin-top: 1.6rem;
+  color: #67e8f9;
+  font-size: 0.77rem;
+  line-height: 1.7;
+}
+
+/* =========================================
+   COLUMNAS
+========================================= */
+
+.footer-v4-column h2 {
+  margin-bottom: 1.35rem;
+  color: #f8fafc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.footer-v4-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-v4-column a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer-v4-column a:hover {
+  color: #22d3ee;
+}
+
+.footer-v4-social svg {
+  flex-shrink: 0;
+}
+
+/* =========================================
+   VOLVER AL INICIO
+========================================= */
+
+.footer-v4-back-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  background: rgba(34, 211, 238, 0.07);
+  color: #22d3ee;
+
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.footer-v4-back-top:hover {
+  background: rgba(34, 211, 238, 0.15);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   FRANJA INFERIOR
+========================================= */
+
+.footer-v4-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  padding-top: 1.75rem;
+
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.footer-v4-bottom p {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+.footer-v4-bottom span {
+  color: #cbd5e1;
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+.footer-v4 a:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .footer-v4-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+
+  .footer-v4-brand {
+    max-width: none;
+  }
+
+  .footer-v4-top-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MÓVIL
+========================================= */
+
+@media (max-width: 640px) {
+  .footer-v4-container {
+    padding: 3.5rem 1.25rem 1.5rem;
+  }
+
+  .footer-v4-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.75rem 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .footer-v4-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-v4-logo {
+    font-size: 2rem;
+  }
+
+  .footer-v4-top-wrapper {
+    grid-column: 1 / -1;
+    justify-content: flex-start;
+  }
+
+  .footer-v4-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer-v4-main {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-v4-brand,
+  .footer-v4-top-wrapper {
+    grid-column: auto;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-v4 *,
+  .footer-v4 *::before,
+  .footer-v4 *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

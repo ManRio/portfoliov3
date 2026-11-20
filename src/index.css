@@ -9,13 +9,21 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 90px;
 }
 
 html,
 body {
-  height: 100%;
-  overflow-x: hidden; /* evita scroll lateral */
-  overflow-y: auto; /* un único scroll vertical controlado */
+  min-height: 100%;
+  margin: 0;
+}
+
+html {
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+  background-color: #000;
+  color: #fff;
 }
