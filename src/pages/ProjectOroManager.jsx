@@ -1,5 +1,4 @@
-﻿import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 
 import {
   ArrowLeft,
@@ -89,14 +88,6 @@ const gallery = [
 ];
 
 function ProjectOroManager() {
-  useEffect(() => {
-    document.title = 'ORO Manager | Experiencia profesional - Manuel Ríos';
-
-    return () => {
-      document.title = 'Manuel Ríos | Desarrollador Web Full Stack';
-    };
-  }, []);
-
   return (
     <main className='case-study' id='main-content'>
       <div className='case-study-container'>

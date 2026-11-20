@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -72,14 +71,6 @@ const gallery = [
 ];
 
 function ProjectIntercalaPDF() {
-  useEffect(() => {
-    document.title = 'IntercalaPDF | Caso práctico - Manuel Ríos';
-
-    return () => {
-      document.title = 'Manuel Ríos | Desarrollador Web Full Stack';
-    };
-  }, []);
-
   return (
     <main className='case-study' id='main-content'>
       <div className='case-study-container'>

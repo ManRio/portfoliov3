@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -105,14 +104,6 @@ const gallery = [
 ];
 
 function ProjectPn3D() {
-  useEffect(() => {
-    document.title = 'PN Impresión 3D | Caso práctico Full Stack - Manuel Ríos';
-
-    return () => {
-      document.title = 'Manuel Ríos | Desarrollador Web Full Stack';
-    };
-  }, []);
-
   return (
     <main className='case-study' id='main-content'>
       <div className='case-study-container'>

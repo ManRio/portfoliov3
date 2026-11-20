@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -117,14 +116,6 @@ const gallery = [
 ];
 
 function ProjectVerifactu() {
-  useEffect(() => {
-    document.title = 'VeriFactu App | Caso práctico Full Stack - Manuel Ríos';
-
-    return () => {
-      document.title = 'Manuel Ríos | Desarrollador Web Full Stack';
-    };
-  }, []);
-
   return (
     <main className='case-study' id='main-content'>
       <div className='case-study-container'>
