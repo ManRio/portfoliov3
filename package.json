@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/generate-robots.mjs",
+    "postbuild": "node scripts/generate-sitemap.mjs && node scripts/generate-robots.mjs && node scripts/generate-seo-pages.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

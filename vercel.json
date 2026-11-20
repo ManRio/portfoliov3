@@ -2,23 +2,58 @@
   "redirects": [
     {
       "source": "https://portfoliov3-omega-nine.vercel.app/(.*)",
-      "destination": "https://www.manrio.dev/$1",
+      "destination": "https://manrio.dev/$1",
       "permanent": true
     }
   ],
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/projects/pn-impresion-3d",
+      "destination": "/seo-pages/pn-impresion-3d.html"
+    },
+    {
+      "source": "/projects/verifactu-app",
+      "destination": "/seo-pages/verifactu-app.html"
+    },
+    {
+      "source": "/projects/stockit",
+      "destination": "/seo-pages/stockit.html"
+    },
+    {
+      "source": "/projects/ProjectOroManager",
+      "destination": "/seo-pages/ProjectOroManager.html"
+    },
+    {
+      "source": "/projects/intercala-pdf",
+      "destination": "/seo-pages/intercala-pdf.html"
+    },
+    {
+      "source": "/projects/ProjectTaskGamification",
+      "destination": "/seo-pages/ProjectTaskGamification.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/sitemap.xml",
-      "headers": [{ "key": "Content-Type", "value": "application/xml" }]
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml"
+        }
+      ]
     },
     {
       "source": "/robots.txt",
-      "headers": [{ "key": "Content-Type", "value": "text/plain" }]
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ]
     }
   ]
 }
