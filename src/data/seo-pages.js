@@ -5,7 +5,7 @@ export const seoPages = {
     title: 'Manuel Ríos | Desarrollador Web Full Stack',
     description:
       'Portfolio de Manuel Ríos, desarrollador web Full Stack en Sevilla. Proyectos reales con React, Next.js, TypeScript, Python y tecnologías backend.',
-    image: '/og-image.jpg',
+    image: '/og-image.png',
   },
 
   '/projects/pn-impresion-3d': {
