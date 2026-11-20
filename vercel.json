@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "https://portfoliov3-omega-nine.vercel.app/(.*)",
-      "destination": "https://manrio.dev/$1",
-      "permanent": true
-    }
-  ],
   "rewrites": [
     {
       "source": "/projects/pn-impresion-3d",
